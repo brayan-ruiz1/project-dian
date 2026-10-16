@@ -5,6 +5,7 @@ const saveStatus = document.querySelector("#save-status");
 const toast = document.querySelector("#toast");
 const menu = document.querySelector("#sidebar");
 const menuToggle = document.querySelector("#menu-toggle");
+const menuClose = document.querySelector("#sidebar-close");
 const menuBackdrop = document.querySelector("#sidebar-backdrop");
 
 let guide;
@@ -463,6 +464,7 @@ document.addEventListener("click", async (event) => {
 });
 
 menuToggle.addEventListener("click", toggleMobileMenu);
+menuClose.addEventListener("click", closeMobileMenu);
 menuBackdrop.addEventListener("click", closeMobileMenu);
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeMobileMenu();

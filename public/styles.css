@@ -308,6 +308,7 @@ button, select, input { max-width: 100%; }
 .menu-toggle { min-width: 44px; min-height: 44px; border-radius: 10px; }
 .menu-toggle:hover { background: #f1f2fb; }
 .sidebar-backdrop { display: none; }
+.sidebar-close { display: none; }
 .option, .likert-options button, .secondary-button, .primary-button, .small-button { min-height: 44px; }
 .indicator-row { min-height: 58px; }
 
@@ -339,6 +340,24 @@ button, select, input { max-width: 100%; }
     padding-bottom: max(18px, env(safe-area-inset-bottom));
     transform: translateX(-105%);
   }
+  .sidebar-close {
+    position: absolute;
+    top: max(16px, env(safe-area-inset-top));
+    right: 12px;
+    z-index: 1;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border: 1px solid #e3e7f0;
+    border-radius: 11px;
+    background: #fff;
+    color: #344258;
+    font-size: 25px;
+    line-height: 1;
+  }
+  .sidebar-close:hover { background: #f1f2fb; border-color: #cbc8f6; }
+  .sidebar > .brand { margin-right: 55px; }
   .sidebar.open { transform: translateX(0); }
   .sidebar-backdrop {
     position: fixed;
