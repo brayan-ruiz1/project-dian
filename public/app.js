@@ -4,6 +4,8 @@ const breadcrumb = document.querySelector("#breadcrumb-current");
 const saveStatus = document.querySelector("#save-status");
 const toast = document.querySelector("#toast");
 const menu = document.querySelector("#sidebar");
+const menuToggle = document.querySelector("#menu-toggle");
+const menuBackdrop = document.querySelector("#sidebar-backdrop");
 
 let guide;
 let progress;
@@ -28,6 +30,22 @@ const answeredCount = () => Object.keys(progress.answers).length;
 const correctCount = () => Object.values(progress.answers).filter((answer) => answer.correct).length;
 const practiceCount = (indicator) => indicator.study?.reflections?.length
   ?? (indicator.questions.length + (indicator.study?.checks?.length || 0));
+
+function closeMobileMenu() {
+  menu.classList.remove("open");
+  menuBackdrop.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Abrir menú");
+  document.body.classList.remove("menu-open");
+}
+
+function toggleMobileMenu() {
+  const isOpen = menu.classList.toggle("open");
+  menuBackdrop.classList.toggle("open", isOpen);
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+  document.body.classList.toggle("menu-open", isOpen);
+}
 
 async function api(url, options = {}) {
   const response = await fetch(url, {
@@ -70,7 +88,7 @@ function goHome() {
   quiz = null;
   breadcrumb.textContent = "Mi ruta";
   setActiveNav("home");
-  menu.classList.remove("open");
+  closeMobileMenu();
   renderHome();
 }
 
@@ -155,7 +173,7 @@ function openSection(sectionId, search = "") {
   view = { name: "section", sectionId };
   breadcrumb.textContent = section.title;
   setActiveNav("section", sectionId);
-  menu.classList.remove("open");
+  closeMobileMenu();
   renderSection(sectionId, search);
 }
 
@@ -213,7 +231,7 @@ function renderLesson(indicatorId) {
   view = { name: "lesson", indicatorId };
   breadcrumb.textContent = indicator.title;
   setActiveNav("section", indicator.section);
-  menu.classList.remove("open");
+  closeMobileMenu();
   app.innerHTML = `
     <div class="lesson-header"><span class="section-icon tone-${esc(section.color)}">${esc(section.icon)}</span><div><div class="eyebrow">${esc(section.title)} · ${esc(indicator.type)}</div><h1>${esc(indicator.title)}</h1></div></div>
     <div class="lesson-layout">
@@ -286,7 +304,7 @@ function startExam(sectionId = null) {
   view = { name: "quiz" };
   breadcrumb.textContent = "Repaso funcional";
   setActiveNav("exam");
-  menu.classList.remove("open");
+  closeMobileMenu();
   renderQuiz();
   examTimer = setInterval(() => {
     if (!quiz) return;
@@ -444,7 +462,11 @@ document.addEventListener("click", async (event) => {
   }
 });
 
-document.querySelector("#menu-toggle").addEventListener("click", () => menu.classList.toggle("open"));
+menuToggle.addEventListener("click", toggleMobileMenu);
+menuBackdrop.addEventListener("click", closeMobileMenu);
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeMobileMenu();
+});
 
 async function initialize() {
   try {
