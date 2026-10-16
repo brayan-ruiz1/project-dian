@@ -1,0 +1,6 @@
+services:
+  - type: web
+    runtime: static
+    name: dian-2676-gestor-i
+    buildCommand: node scripts/prepare-static.js
+    staticPublishPath: ./public

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="Guía interactiva y material de repaso para el proceso DIAN 2676, empleo 236767 Gestor I.">
+  <title>DIAN 2676 | Ruta de preparación</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="/" aria-label="DIAN 2676, inicio">
+        <span class="brand-mark">D</span>
+        <span><strong>RUTA DIAN</strong><small>PREPARACIÓN 2676</small></span>
+      </a>
+      <div class="exam-badge"><span class="live-dot"></span> PROCESO DE SELECCIÓN</div>
+      <p class="side-label">TU ESPACIO</p>
+      <button class="nav-link active" data-view="home"><span class="nav-icon">⌂</span> Mi ruta <span class="nav-arrow">›</span></button>
+      <button class="nav-link" data-view="exam"><span class="nav-icon">◷</span> Repaso funcional</button>
+      <p class="side-label section-label">CONTENIDO DE ESTUDIO</p>
+      <nav class="section-nav" id="section-nav" aria-label="Secciones de estudio"></nav>
+      <div class="side-footer">
+        <div class="mini-shield">✓</div>
+        <div><strong>Un paso a la vez</strong><small>Practica, aprende y vuelve a intentar.</small></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">☰</button>
+        <div class="breadcrumb"><span>PREPARACIÓN</span><b>/</b><strong id="breadcrumb-current">Mi ruta</strong></div>
+        <div class="top-meta"><span class="sync-dot"></span><span id="save-status">Progreso guardado</span><span class="avatar">G</span></div>
+      </header>
+
+      <div id="app" class="content" aria-live="polite">
+        <div class="loading-card">Preparando tu espacio de estudio...</div>
+      </div>
+      <footer class="footer-note">Material de estudio independiente. Verifica siempre la normativa vigente y las publicaciones oficiales de la DIAN y la CNSC.</footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>

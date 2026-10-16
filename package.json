@@ -1,0 +1,10 @@
+{
+  "name": "preparacion-dian-2676",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aplicación local de estudio y simulacros para el proceso DIAN 2676.",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}
