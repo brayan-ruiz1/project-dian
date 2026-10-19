@@ -159,7 +159,7 @@ for (const indicator of guide.indicators) {
   if (module.case) {
     const caseQuestion = {
       ...module.case,
-      prompt: module.case.question,
+      prompt: `${module.case.question} En este caso, ${module.case.scenario}.`,
       generatedBy: "detailed-study-v1",
     };
     indicator.questions = (indicator.questions || []).filter((question) => question.generatedBy !== "detailed-study-v1");

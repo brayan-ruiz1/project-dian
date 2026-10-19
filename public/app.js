@@ -117,6 +117,7 @@ function renderHome() {
   const totalQuestions = allQuestions().length + guide.indicators.reduce((sum, indicator) => sum + (indicator.study?.reflections?.length || 0), 0);
   const next = guide.indicators.find((indicator) => !progress.completedSections.includes(indicator.id)) || guide.indicators[0];
   const lastSection = getSection(next.section);
+  const finalSimulation = guide.exam?.finalSimulation || { title: "Simulacro final tipo PJS", questionCount: 30, timeMinutes: 45 };
   app.innerHTML = `
     <section class="hero">
       <div class="hero-copy">
@@ -124,7 +125,10 @@ function renderHome() {
         <div class="hero-title"><h1>Prepárate con propósito.</h1><span class="hero-pill">GESTOR I</span></div>
         <p>Una ruta de estudio por indicadores, con material de repaso y ejercicios para detectar vacíos y llevar tu avance a tu ritmo.</p>
       </div>
-      <button class="hero-action" data-action="exam">Practicar preguntas <span aria-hidden="true">→</span></button>
+      <div class="hero-actions" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end">
+        <button class="hero-action" data-action="exam">Practicar preguntas <span aria-hidden="true">→</span></button>
+        <button class="hero-action" data-action="final-simulation" style="background:linear-gradient(135deg,#1f7bd0,#5e42c4)">Simulacro final PJS <span aria-hidden="true">→</span></button>
+      </div>
     </section>
     <section class="panel" style="margin:16px 0;border-left:4px solid #5856a6">
       <div class="eyebrow">FORMATO OFICIAL DE LA PRUEBA · SEGÚN LA GUÍA CNSC</div>
@@ -133,6 +137,8 @@ function renderHome() {
         <div><strong>Comportamentales e integridad</strong><p class="subtle" style="margin:5px 0 0">Afirmaciones con escala Likert de cuatro niveles; no hay respuestas correctas o incorrectas.</p></div>
         <div><strong>Aplicación</strong><p class="subtle" style="margin:5px 0 0">${esc(new Date(`${guide.exam.examDate}T12:00:00`).toLocaleDateString("es-CO", { day: "numeric", month: "long", year: "numeric" }))} · ${esc(guide.exam.examDuration)}. Verifica la citación en SIMO.</p></div>
       </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px">${(guide.exam.focusAreas || []).map((area) => `<span class="section-count">${esc(area)}</span>`).join("")}</div>
+      <div class="section-heading" style="margin-top:12px"><div><strong>Simulacro final recomendado</strong><p class="subtle" style="margin:5px 0 0">${esc(finalSimulation.description || "Práctica orientada a los temas más probables de la prueba.")}</p></div><button class="primary-button" data-action="final-simulation">Iniciar ${esc(finalSimulation.title || "simulacro")}</button></div>
       <p class="subtle" style="font-size:11px;margin:12px 0 0">Este banco es material independiente de práctica: no es el banco oficial ni reproduce preguntas reservadas. El modo aleatorio de esta aplicación ayuda a repasar contenidos, pero no equivale a una PJS oficial.</p>
     </section>
     <section class="stats-grid" aria-label="Resumen del progreso">
@@ -277,6 +283,31 @@ function shuffled(items) {
   return result;
 }
 
+const PRIORITY_INDICATORS = new Set([
+  "obligaciones-tributarias",
+  "liquidacion-impuestos",
+  "sanciones",
+  "fiscalizacion",
+  "determinacion-control-tributario",
+  "fiscalizacion-aduanera",
+  "cambiaria",
+  "estructura-dian",
+  "mision-dian",
+  "procedimiento-administrativo",
+  "transparencia-acceso",
+  "razonamiento",
+  "lavado-activos",
+  "auditoria",
+  "constitucion-estado",
+]);
+
+function buildWeightedPool() {
+  return allQuestions().flatMap((question) => {
+    const weight = PRIORITY_INDICATORS.has(question.indicatorId) ? 3 : 1;
+    return Array.from({ length: weight }, () => question);
+  });
+}
+
 function startExam(sectionId = null) {
   clearInterval(examTimer);
   const source = allQuestions().filter((question) => {
@@ -301,9 +332,49 @@ function startExam(sectionId = null) {
     answers: {},
     current: 0,
     secondsLeft: Math.max(10 * 60, questions.length * 75),
+    isOfficialSimulation: false,
   };
   view = { name: "quiz" };
   breadcrumb.textContent = "Repaso funcional";
+  setActiveNav("exam");
+  closeMobileMenu();
+  renderQuiz();
+  examTimer = setInterval(() => {
+    if (!quiz) return;
+    quiz.secondsLeft -= 1;
+    const timer = document.querySelector("#quiz-timer");
+    if (timer) timer.textContent = formatTime(quiz.secondsLeft);
+    if (quiz.secondsLeft <= 0) finishExam();
+  }, 1000);
+}
+
+function startFinalSimulation() {
+  clearInterval(examTimer);
+  const pool = shuffled(buildWeightedPool()).filter((question) => {
+    const type = getIndicator(question.indicatorId).type;
+    return type !== "Competencia conductual" && type !== "Integridad";
+  });
+  const target = Math.min(guide.exam?.finalSimulation?.questionCount || 30, pool.length);
+  const questions = shuffled(pool).slice(0, target).map((question) => {
+    const distractors = question.options.map((_, index) => index).filter((index) => index !== question.answer);
+    const optionIndexes = shuffled([question.answer, ...shuffled(distractors).slice(0, 2)]);
+    return { ...question, options: optionIndexes.map((index) => question.options[index]), answer: optionIndexes.indexOf(question.answer) };
+  });
+  if (!questions.length) {
+    notify("No hay suficientes preguntas funcionales para construir el simulacro final. Revisa los indicadores de estudio.");
+    return;
+  }
+  quiz = {
+    sectionId: null,
+    title: guide.exam?.finalSimulation?.title || "Simulacro final tipo PJS",
+    questions,
+    answers: {},
+    current: 0,
+    secondsLeft: Math.max(18 * 60, (guide.exam?.finalSimulation?.timeMinutes || 45) * 60),
+    isOfficialSimulation: true,
+  };
+  view = { name: "quiz" };
+  breadcrumb.textContent = "Simulacro final";
   setActiveNav("exam");
   closeMobileMenu();
   renderQuiz();
@@ -326,8 +397,12 @@ function renderQuiz() {
   const item = quiz.questions[quiz.current];
   const answered = Object.keys(quiz.answers).length;
   const progressPercent = answered / quiz.questions.length * 100;
+  const examMode = quiz.isOfficialSimulation ? "MODO SIMULACRO FINAL · TIPO PJS" : "MODO DE REPASO · NO OFICIAL";
+  const examText = quiz.isOfficialSimulation
+    ? "Ejercicio orientado al formato de la prueba: caso, enunciado y tres opciones. Está diseñado para reforzar los temas más probables de DIAN 2676, pero no sustituye el banco oficial ni la citación del SIMO."
+    : "Repasa conceptos funcionales con tres alternativas por ejercicio. Estos ítems son preguntas didácticas de conocimiento, no casos PJS oficiales. Puedes volver a preguntas anteriores; al finalizar verás tu resultado de práctica y las explicaciones.";
   app.innerHTML = `
-    <section class="exam-intro"><div class="eyebrow" style="color:#c3c7ff">MODO DE REPASO · NO OFICIAL</div><h1>${esc(quiz.title)}</h1><p>Repasa conceptos funcionales con tres alternativas por ejercicio. Estos ítems son preguntas didácticas de conocimiento, no casos PJS oficiales. Puedes volver a preguntas anteriores; al finalizar verás tu resultado de práctica y las explicaciones.</p></section>
+    <section class="exam-intro"><div class="eyebrow" style="color:#c3c7ff">${examMode}</div><h1>${esc(quiz.title)}</h1><p>${examText}</p></section>
     <div class="exam-controls"><span class="section-count">${quiz.questions.length} preguntas</span><span class="section-count">·</span><span class="section-count">Opción múltiple</span><span style="margin-left:auto" class="section-count">Tiempo disponible</span><strong id="quiz-timer" style="font-size:12px;color:#49536b">${formatTime(quiz.secondsLeft)}</strong><button class="text-button" data-action="exit-quiz">Salir</button></div>
     <div class="exam-progress"><span>Pregunta ${quiz.current + 1} de ${quiz.questions.length}</span><span class="progress-track"><span class="progress-fill" style="width:${(quiz.current + 1) / quiz.questions.length * 100}%"></span></span><span>${answered} respondidas</span></div>
     <article class="question-card exam-card">
@@ -360,8 +435,9 @@ async function finishExam() {
   view = { name: "result" };
   breadcrumb.textContent = "Resultado";
   const percentage = Math.round(correct / finished.questions.length * 100);
+  const resultBadge = finished.isOfficialSimulation ? "SIMULACRO FINAL CERRADO · NO ES PUNTAJE OFICIAL" : "REPASO TERMINADO · NO ES PUNTAJE OFICIAL";
   app.innerHTML = `
-    <section class="result-hero"><div class="eyebrow" style="color:#c6c8f6">REPASO TERMINADO · NO ES PUNTAJE OFICIAL</div><h1>${esc(finished.title)}</h1><div class="result-score"><div class="score-ring">${percentage}%</div><p><strong style="color:white">${correct} de ${finished.questions.length} respuestas correctas</strong><br>${finished.questions.length - Object.keys(finished.answers).length} preguntas sin responder.<br>Este resultado es una referencia de práctica, no un puntaje oficial ni una garantía de selección.</p></div></section>
+    <section class="result-hero"><div class="eyebrow" style="color:#c6c8f6">${resultBadge}</div><h1>${esc(finished.title)}</h1><div class="result-score"><div class="score-ring">${percentage}%</div><p><strong style="color:white">${correct} de ${finished.questions.length} respuestas correctas</strong><br>${finished.questions.length - Object.keys(finished.answers).length} preguntas sin responder.<br>Este resultado es una referencia de práctica, no un puntaje oficial ni una garantía de selección.</p></div></section>
     <div class="section-heading" style="margin-top:22px"><div><h2>Revisa tus respuestas</h2><p class="subtle">Comprende el criterio de cada pregunta antes de volver a intentarlo.</p></div><button class="primary-button" data-action="${finished.sectionId ? "retry-section" : "exam"}" ${finished.sectionId ? `data-section="${esc(finished.sectionId)}"` : ""}>Intentar de nuevo →</button></div>
     <div class="result-list">${finished.questions.map((question, index) => {
       const selected = finished.answers[index];
@@ -416,6 +492,7 @@ document.addEventListener("click", async (event) => {
     return;
   }
   if (button.dataset.view === "home") { goHome(); return; }
+  if (button.dataset.action === "final-simulation") { startFinalSimulation(); return; }
   if (button.dataset.view === "exam" || button.dataset.action === "exam") { startExam(); return; }
   if (button.dataset.action === "section-exam" || button.dataset.action === "retry-section") {
     startExam(button.dataset.section);

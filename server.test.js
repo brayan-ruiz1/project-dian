@@ -59,6 +59,50 @@ test("la guía cubre los 38 indicadores y todas las preguntas son cerradas", () 
   }
 });
 
+test("el banco evita repeticiones de caso, formato y respuesta dentro de cada indicador", () => {
+  for (const indicator of guide.indicators) {
+    if (indicator.study?.reflections) continue;
+    const prompts = new Set();
+    const cases = new Set();
+    for (const question of indicator.questions) {
+      const prompt = (question.prompt || question.question || "").trim();
+      const caseKey = (question.case || question.scenario || "").trim();
+      assert.ok(prompt.length > 20, `${indicator.title}: el prompt debe ser específico`);
+      assert.ok(caseKey.length > 30, `${indicator.title}: el caso debe contener contexto suficiente`);
+      assert.ok(!prompts.has(prompt), `${indicator.title}: prompt repetido`);
+      prompts.add(prompt);
+      assert.ok(!cases.has(caseKey), `${indicator.title}: caso repetido`);
+      cases.add(caseKey);
+      const optionTexts = question.options.map((option) => String(option).trim().toLowerCase());
+      assert.ok(new Set(optionTexts).size === optionTexts.length, `${indicator.title}: hay opciones duplicadas`);
+    }
+  }
+});
+
+test("la guía prioriza los ejes reales de la prueba DIAN 2676", () => {
+  const coverageText = JSON.stringify(guide).toLowerCase();
+  const requiredTopics = [
+    "derecho de petición",
+    "tutela",
+    "mipg",
+    "servicio al ciudadano",
+    "ofimática",
+    "power point",
+    "excel",
+    "incoterms",
+    "nomenclatura arancelaria",
+    "contratación",
+    "devoluciones y cobranzas",
+    "control de ingresos",
+    "fiscalización cambiaria",
+    "redacción de documentos"
+  ];
+
+  for (const topic of requiredTopics) {
+    assert.ok(coverageText.includes(topic), `Falta cubrir el tema: ${topic}`);
+  }
+});
+
 test("la API entrega la guía, publica la página y rechaza progreso inválido", async (context) => {
   const server = http.createServer(handler);
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));

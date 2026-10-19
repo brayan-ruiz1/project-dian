@@ -10,32 +10,62 @@ const guide = JSON.parse(fs.readFileSync(file, "utf8"));
 const TARGET_PER_INDICATOR = 22;
 const sceneOpeners = [
   "Durante la revisión inicial de un expediente",
-  "Al preparar una actuación de control",
+  "En una mesa de trabajo con varias dependencias involucradas",
   "Al contrastar la información recibida con los soportes",
-  "Antes de comunicar una decisión a la persona interesada",
-  "Al recibir un caso con varias dependencias involucradas",
-  "Mientras verifica un posible incumplimiento",
-  "Al cerrar el análisis de una operación reportada",
-  "Cuando un compañero solicita agilizar el trámite",
-  "Al revisar una actuación iniciada por otra dependencia",
-  "Cuando la evidencia disponible parece contradictoria",
-  "Al atender una solicitud relacionada con el procedimiento",
+  "Antes de cerrar una decisión o un acto de trámite",
+  "Cuando un funcionario propone resolver con rapidez",
+  "Mientras se verifica un posible incumplimiento",
+  "Al revisar una operación o solicitud reportada",
+  "En una atención al ciudadano con solicitud y documentos",
+  "Cuando el expediente contiene evidencia contradictoria",
+  "Al evaluar un riesgo funcional o de integridad",
+  "En una revisión de competencia o de procedimiento",
+];
+const actorProfiles = [
+  "un contribuyente",
+  "una empresa con operación internacional",
+  "un usuario de la DIAN",
+  "un equipo territorial",
+  "una dirección de apoyo",
+  "un servidor público responsable del trámite",
+  "un funcionario que recibe la solicitud",
+  "un analista asignado al caso",
+];
+const eventTriggers = [
+  "presenta documentos que no coinciden con la información del sistema",
+  "solicita una respuesta urgente sobre un trámite aún no resuelto",
+  "aporta soportes que cambian el análisis de la operación",
+  "pide orientación sobre un requisito formal que no entiende",
+  "solicita un acto de trámite que exige verificar competencia",
+  "reporta una diferencia que podría afectar la liquidación",
+  "adjunta evidencia que se contrapone con el archivo del expediente",
+  "requiere claridad sobre un requerimiento, una sanción o una notificación",
+];
+const riskClues = [
+  "la rapidez puede sustituir la competencia",
+  "el caso exige separar la urgencia del análisis técnico",
+  "la evidencia debe contrastarse antes de concluir",
+  "las decisiones de fondo requieren motivación y trazabilidad",
+  "un traslado sin base y sin comunicación puede generar indefensión",
+  "el riesgo se agrava si se toma la decisión sin verificar el procedimiento",
+  "la solución no puede depender solo de la intuición del equipo",
+  "una respuesta prematura puede afectar derechos y legalidad",
 ];
 const promptForms = [
-  "¿Cuál es la actuación más adecuada para continuar?",
-  "¿Qué decisión protege mejor la legalidad y la calidad del análisis?",
-  "¿Qué debería hacer primero el servidor responsable?",
-  "¿Cuál respuesta está mejor sustentada para este caso?",
-  "¿Qué curso de acción permite resolver el asunto con trazabilidad?",
-  "¿Cómo debe proceder antes de adoptar una conclusión?",
+  "¿Qué debe hacer primero el responsable antes de decidir o remitir?",
+  "¿Cuál actuación protege mejor la legalidad y la trazabilidad del caso?",
+  "¿Qué decisión es más sólida para resolver este asunto sin vulnerar garantías?",
+  "¿Qué debe verificar antes de adoptar una conclusión?",
+  "¿Cuál opción mantiene el procedimiento correcto y la calidad del análisis?",
+  "¿Qué acción es más adecuada para evitar un error funcional o administrativo?",
 ];
 const genericErrors = [
-  "Concluir a partir de la alerta inicial, sin verificar los hechos ni los soportes.",
-  "Omitir el registro de la actuación para terminar el trámite con mayor rapidez.",
-  "Aplicar automáticamente una regla de otro procedimiento sin verificar su vigencia y alcance.",
-  "Comunicar una conclusión sin motivarla ni permitir las garantías que correspondan.",
-  "Compartir datos reservados con personas que no tienen autorización para conocerlos.",
-  "Cerrar el asunto sin comprobar competencia, términos y evidencia disponible.",
+  "Cerrar el asunto sin comprobar competencia, soportes, términos y evidencia disponible.",
+  "Omitir el registro y la trazabilidad para terminar con rapidez.",
+  "Aplicar una regla de otro procedimiento sin revisar la norma, el contexto y la vigencia.",
+  "Comunicar una conclusión sin motivarla ni permitir la defensa o la contradicción.",
+  "Compartir información reservada con personas que no tienen autorización.",
+  "Resolver por intuición o por la presión del momento, sin contrastar la información.",
 ];
 
 const isScored = (indicator) => !indicator.study?.reflections;
@@ -52,36 +82,42 @@ for (const indicator of guide.indicators) {
     .filter((question) => question.generatedBy !== "situational-case-bank-v1")
     .filter((question) => question.case || question.scenario)
     .map((question) => ({ ...question, case: question.case || question.scenario }));
-  const known = new Set(questions.map((question) => question.prompt));
+  const seenPairs = new Set();
   let serial = 0;
   while (questions.length < TARGET_PER_INDICATOR) {
     const index = serial++;
-    const route = study.route[index % study.route.length];
-    const fact = study.essentials[Math.floor(index / study.route.length) % study.essentials.length];
-    const risk = study.pitfalls[index % study.pitfalls.length];
-    const opener = sceneOpeners[index % sceneOpeners.length];
-    const caseText = `${opener}, el asunto de «${indicator.title}» presenta este riesgo: ${risk.charAt(0).toLowerCase()}${risk.slice(1)} Además, el expediente contiene información que debe contrastarse antes de resolver. Para el análisis también se debe considerar que ${fact.charAt(0).toLowerCase()}${fact.slice(1)}`;
-    const prompt = `${caseText}\n\n${promptForms[index % promptForms.length]}`;
-    if (known.has(prompt)) continue;
+    const route = study.route[(index + indicator.id.length) % study.route.length];
+    const fact = study.essentials[(index + 2) % study.essentials.length];
+    const risk = study.pitfalls[(index + 1) % study.pitfalls.length];
+    const opener = sceneOpeners[(index + indicator.id.length) % sceneOpeners.length];
+    const actor = actorProfiles[(index + 3) % actorProfiles.length];
+    const trigger = eventTriggers[(index + 5) % eventTriggers.length];
+    const riskClue = riskClues[(index + 4) % riskClues.length];
+    const promptTemplate = promptForms[(index + indicator.id.length) % promptForms.length];
+    const caseText = `${opener}, ${actor} ${trigger}. El caso presenta este riesgo: ${riskClue}; además, hay un problema de ${risk.toLowerCase()} y se requiere apoyar la decisión con evidencia y con la norma aplicable. Para el análisis también debe considerarse que ${fact.charAt(0).toLowerCase()}${fact.slice(1)}`;
+    const prompt = `${promptTemplate} En este caso, ${actor} ${trigger.toLowerCase()}.`;
+    const pairKey = `${indicator.id}:${caseText}|${prompt}`;
+    if (seenPairs.has(pairKey)) continue;
+    seenPairs.add(pairKey);
 
     const wrongs = [
-      genericErrors[index % genericErrors.length],
-      genericErrors[(index + 2) % genericErrors.length],
+      genericErrors[(index + 1) % genericErrors.length],
+      genericErrors[(index + 3) % genericErrors.length],
+      genericErrors[(index + 5) % genericErrors.length],
     ];
-    const options = [route, ...wrongs];
-    const answer = (index * 7 + indicator.id.length) % options.length;
-    const correct = options[0];
+    const options = [route, ...wrongs].slice(0, 3);
+    const answerIndex = (index + indicator.id.length + 1) % options.length;
+    const correctOption = options[0];
     options.splice(0, 1);
-    options.splice(answer, 0, correct);
+    options.splice(answerIndex, 0, correctOption);
     questions.push({
       case: caseText,
-      prompt: promptForms[index % promptForms.length],
+      prompt,
       options,
-      answer,
-      why: `La opción correcta es aplicar la ruta del tema: ${route} ${fact} El riesgo descrito debe verificarse con evidencia y con la norma aplicable al momento de los hechos; las otras alternativas omiten controles, garantías o trazabilidad.`,
+      answer: answerIndex,
+      why: `La opción correcta es aplicar la ruta del tema: ${route}. ${fact} El riesgo descrito exige verificar competencia, evidencia y procedimiento, mientras las otras alternativas omiten controles, garantías o trazabilidad.`,
       generatedBy: "situational-case-bank-v1",
     });
-    known.add(prompt);
   }
   indicator.questions = questions;
 }
