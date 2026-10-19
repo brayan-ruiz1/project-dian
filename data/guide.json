@@ -2155,120 +2155,28 @@
       ],
       "questions": [
         {
-          "case": "En 2026 se detecta una posible infracción aduanera. La operación comenzó antes del 19 de junio, pero el acto de fondo aún no está en firme.",
+          "case": "Una operación aduanera se inició el 18 de junio de 2026. El procedimiento sancionatorio comenzó el 22 de junio, después de la entrada en vigor de la Ley 2586. Antes de que el acto de fondo quede en firme, se advierte que la nueva ley podría prever una sanción más favorable.",
           "prompt": "¿Qué criterio debe aplicar el servidor para resolver la situación?",
           "options": [
             "La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado.",
             "La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto.",
             "En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales.",
-            "La Ley 2586 de 2026 es el régimen legal aduanero vigente desde el 19 de junio de 2026; derogó el Decreto Ley 920 de 2023. Para operaciones y procesos anteriores se analiza el régimen transitorio y la favorabilidad, no se aplica mecánicamente la regla actual."
+            "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           ],
-          "answer": 1,
-          "why": "Correcta: responde al caso porque aplica este criterio de Imposición de sanciones: La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto.",
+          "answer": 3,
+          "why": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
           "optionExplanations": {
-            "0": "Distractor: La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "1": "Correcta: responde al caso porque aplica este criterio de Imposición de sanciones: La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto.",
-            "2": "Distractor: En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "3": "Distractor: La Ley 2586 de 2026 es el régimen legal aduanero vigente desde el 19 de junio de 2026; derogó el Decreto Ley 920 de 2023. Para operaciones y procesos anteriores se analiza el régimen transitorio y la favorabilidad, no se aplica mecánicamente la regla actual.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso."
+            "0": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "1": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "2": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "3": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           },
           "difficulty": "media",
           "generatedBy": "editorial-curated-v3",
           "auditStatus": "REVISADA_EDITORIALMENTE_COBERTURA_UNICA",
           "sourceCheck": {
             "status": "VERIFICADA_ARTICULO_A_ARTICULO",
-            "reference": "Estatuto Tributario, arts. 637-640 y 647-648",
-            "url": [
-              "https://normograma.dian.gov.co/dian/compilacion/docs/estatuto_tributario.htm"
-            ],
-            "verifiedAt": "2026-10-19",
-            "articles": [
-              {
-                "norma": "Estatuto Tributario",
-                "articulos": "arts. 637-640 y 647-648",
-                "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/estatuto_tributario.htm",
-                "clase": "ley"
-              }
-            ]
-          },
-          "basis": {
-            "studyEssential": "La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto."
-          },
-          "questionQualityNote": "Caso y clave cotejados con el contenido de estudio; artículo o fuente técnica registrado en sourceCheck.",
-          "normativeAudit": {
-            "status": "VERIFICADA",
-            "proposition": "La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto.",
-            "checkedAt": "2026-10-19"
-          }
-        },
-        {
-          "case": "En 2026 se detecta una posible infracción aduanera. La operación comenzó antes del 19 de junio, pero el acto de fondo aún no está en firme.",
-          "prompt": "¿Cuál actuación se ajusta mejor al principio descrito?",
-          "options": [
-            "La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto.",
-            "La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado.",
-            "En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales.",
-            "La Ley 2586 de 2026 es el régimen legal aduanero vigente desde el 19 de junio de 2026; derogó el Decreto Ley 920 de 2023. Para operaciones y procesos anteriores se analiza el régimen transitorio y la favorabilidad, no se aplica mecánicamente la regla actual."
-          ],
-          "answer": 1,
-          "why": "Correcta: responde al caso porque aplica este criterio de Imposición de sanciones: La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado.",
-          "optionExplanations": {
-            "0": "Distractor: La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "1": "Correcta: responde al caso porque aplica este criterio de Imposición de sanciones: La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado.",
-            "2": "Distractor: En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "3": "Distractor: La Ley 2586 de 2026 es el régimen legal aduanero vigente desde el 19 de junio de 2026; derogó el Decreto Ley 920 de 2023. Para operaciones y procesos anteriores se analiza el régimen transitorio y la favorabilidad, no se aplica mecánicamente la regla actual.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso."
-          },
-          "difficulty": "alta",
-          "generatedBy": "editorial-curated-v3",
-          "auditStatus": "REVISADA_EDITORIALMENTE_COBERTURA_UNICA",
-          "sourceCheck": {
-            "status": "VERIFICADA_ARTICULO_A_ARTICULO",
-            "reference": "Estatuto Tributario, arts. 637-640 y 647-648",
-            "url": [
-              "https://normograma.dian.gov.co/dian/compilacion/docs/estatuto_tributario.htm"
-            ],
-            "verifiedAt": "2026-10-19",
-            "articles": [
-              {
-                "norma": "Estatuto Tributario",
-                "articulos": "arts. 637-640 y 647-648",
-                "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/estatuto_tributario.htm",
-                "clase": "ley"
-              }
-            ]
-          },
-          "basis": {
-            "studyEssential": "La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado."
-          },
-          "questionQualityNote": "Caso y clave cotejados con el contenido de estudio; artículo o fuente técnica registrado en sourceCheck.",
-          "normativeAudit": {
-            "status": "VERIFICADA",
-            "proposition": "La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado.",
-            "checkedAt": "2026-10-19"
-          }
-        },
-        {
-          "case": "Una operación aduanera comenzó antes del 19 de junio de 2026 y el procedimiento sancionatorio sigue pendiente. La autoridad debe definir qué régimen aplicar.",
-          "prompt": "¿Cuál actuación se ajusta mejor al principio descrito?",
-          "options": [
-            "La Ley 2586 de 2026 es el régimen legal aduanero vigente desde el 19 de junio de 2026; derogó el Decreto Ley 920 de 2023. Para operaciones y procesos anteriores se analiza el régimen transitorio y la favorabilidad, no se aplica mecánicamente la regla actual.",
-            "La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto.",
-            "La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado.",
-            "En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales."
-          ],
-          "answer": 0,
-          "why": "Correcta: La Ley 2586 de 2026 es el régimen legal aduanero vigente desde el 19 de junio de 2026; derogó el Decreto Ley 920 de 2023. Para operaciones y procesos anteriores se analiza el régimen transitorio y la favorabilidad, no se aplica mecánicamente la regla actual.",
-          "optionExplanations": {
-            "0": "Correcta: La Ley 2586 de 2026 es el régimen legal aduanero vigente desde el 19 de junio de 2026; derogó el Decreto Ley 920 de 2023. Para operaciones y procesos anteriores se analiza el régimen transitorio y la favorabilidad, no se aplica mecánicamente la regla actual.",
-            "1": "Distractor: La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto. No resuelve el aspecto central del caso planteado.",
-            "2": "Distractor: La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado. No resuelve el aspecto central del caso planteado.",
-            "3": "Distractor: En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales. No resuelve el aspecto central del caso planteado."
-          },
-          "difficulty": "media",
-          "generatedBy": "editorial-curated-v3",
-          "auditStatus": "REVISADA_EDITORIALMENTE_COBERTURA_UNICA",
-          "sourceCheck": {
-            "status": "VERIFICADA_ARTICULO_A_ARTICULO",
-            "reference": "Ley 2586 de 2026, arts. 112 y 114",
+            "reference": "Ley 2586 de 2026, arts. 1, 112 y 114",
             "url": [
               "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm"
             ],
@@ -2276,65 +2184,157 @@
             "articles": [
               {
                 "norma": "Ley 2586 de 2026",
-                "articulos": "arts. 112 y 114",
+                "articulos": "arts. 1, 112 y 114",
                 "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm",
                 "clase": "ley"
               }
             ]
           },
           "basis": {
-            "studyEssential": "La Ley 2586 de 2026 es el régimen legal aduanero vigente desde el 19 de junio de 2026; derogó el Decreto Ley 920 de 2023. Para operaciones y procesos anteriores se analiza el régimen transitorio y la favorabilidad, no se aplica mecánicamente la regla actual."
+            "studyEssential": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           },
           "questionQualityNote": "Caso y clave cotejados con el contenido de estudio; artículo o fuente técnica registrado en sourceCheck.",
           "normativeAudit": {
             "status": "VERIFICADA",
-            "proposition": "La Ley 2586 de 2026 es el régimen legal aduanero vigente desde el 19 de junio de 2026; derogó el Decreto Ley 920 de 2023. Para operaciones y procesos anteriores se analiza el régimen transitorio y la favorabilidad, no se aplica mecánicamente la regla actual.",
+            "proposition": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
             "checkedAt": "2026-10-19"
           }
         },
         {
-          "case": "En 2026 se detecta una posible infracción aduanera. La operación comenzó antes del 19 de junio, pero el acto de fondo aún no está en firme.",
-          "prompt": "A partir del caso, ¿qué conclusión está mejor sustentada?",
+          "case": "Una operación aduanera se inició el 18 de junio de 2026. El procedimiento sancionatorio comenzó el 22 de junio, después de la entrada en vigor de la Ley 2586. Antes de que el acto de fondo quede en firme, se advierte que la nueva ley podría prever una sanción más favorable.",
+          "prompt": "¿Cuál actuación se ajusta mejor al principio descrito?",
           "options": [
             "La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto.",
             "La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado.",
             "En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales.",
-            "La Ley 2586 de 2026 es el régimen legal aduanero vigente desde el 19 de junio de 2026; derogó el Decreto Ley 920 de 2023. Para operaciones y procesos anteriores se analiza el régimen transitorio y la favorabilidad, no se aplica mecánicamente la regla actual."
+            "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           ],
-          "answer": 2,
-          "why": "Correcta: responde al caso porque aplica este criterio de Imposición de sanciones: En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales.",
+          "answer": 3,
+          "why": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
           "optionExplanations": {
-            "0": "Distractor: La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "1": "Distractor: La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "2": "Correcta: responde al caso porque aplica este criterio de Imposición de sanciones: En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales.",
-            "3": "Distractor: La Ley 2586 de 2026 es el régimen legal aduanero vigente desde el 19 de junio de 2026; derogó el Decreto Ley 920 de 2023. Para operaciones y procesos anteriores se analiza el régimen transitorio y la favorabilidad, no se aplica mecánicamente la regla actual.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso."
+            "0": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "1": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "2": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "3": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
+          },
+          "difficulty": "alta",
+          "generatedBy": "editorial-curated-v3",
+          "auditStatus": "REVISADA_EDITORIALMENTE_COBERTURA_UNICA",
+          "sourceCheck": {
+            "status": "VERIFICADA_ARTICULO_A_ARTICULO",
+            "reference": "Ley 2586 de 2026, arts. 1, 112 y 114",
+            "url": [
+              "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm"
+            ],
+            "verifiedAt": "2026-10-19",
+            "articles": [
+              {
+                "norma": "Ley 2586 de 2026",
+                "articulos": "arts. 1, 112 y 114",
+                "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm",
+                "clase": "ley"
+              }
+            ]
+          },
+          "basis": {
+            "studyEssential": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
+          },
+          "questionQualityNote": "Caso y clave cotejados con el contenido de estudio; artículo o fuente técnica registrado en sourceCheck.",
+          "normativeAudit": {
+            "status": "VERIFICADA",
+            "proposition": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "checkedAt": "2026-10-19"
+          }
+        },
+        {
+          "case": "Una operación aduanera se inició el 18 de junio de 2026. El procedimiento sancionatorio comenzó el 22 de junio, después de la entrada en vigor de la Ley 2586. Antes de que el acto de fondo quede en firme, se advierte que la nueva ley podría prever una sanción más favorable.",
+          "prompt": "¿Cuál actuación se ajusta mejor al principio descrito?",
+          "options": [
+            "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto.",
+            "La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado.",
+            "En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales."
+          ],
+          "answer": 0,
+          "why": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+          "optionExplanations": {
+            "0": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "1": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "2": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "3": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           },
           "difficulty": "media",
           "generatedBy": "editorial-curated-v3",
           "auditStatus": "REVISADA_EDITORIALMENTE_COBERTURA_UNICA",
           "sourceCheck": {
             "status": "VERIFICADA_ARTICULO_A_ARTICULO",
-            "reference": "Estatuto Tributario, arts. 637-640 y 647-648",
+            "reference": "Ley 2586 de 2026, arts. 1, 112 y 114",
             "url": [
-              "https://normograma.dian.gov.co/dian/compilacion/docs/estatuto_tributario.htm"
+              "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm"
             ],
             "verifiedAt": "2026-10-19",
             "articles": [
               {
-                "norma": "Estatuto Tributario",
-                "articulos": "arts. 637-640 y 647-648",
-                "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/estatuto_tributario.htm",
+                "norma": "Ley 2586 de 2026",
+                "articulos": "arts. 1, 112 y 114",
+                "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm",
                 "clase": "ley"
               }
             ]
           },
           "basis": {
-            "studyEssential": "En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales."
+            "studyEssential": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           },
           "questionQualityNote": "Caso y clave cotejados con el contenido de estudio; artículo o fuente técnica registrado en sourceCheck.",
           "normativeAudit": {
             "status": "VERIFICADA",
-            "proposition": "En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales.",
+            "proposition": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "checkedAt": "2026-10-19"
+          }
+        },
+        {
+          "case": "Una operación aduanera se inició el 18 de junio de 2026. El procedimiento sancionatorio comenzó el 22 de junio, después de la entrada en vigor de la Ley 2586. Antes de que el acto de fondo quede en firme, se advierte que la nueva ley podría prever una sanción más favorable.",
+          "prompt": "A partir del caso, ¿qué conclusión está mejor sustentada?",
+          "options": [
+            "La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto.",
+            "La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado.",
+            "En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales.",
+            "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
+          ],
+          "answer": 3,
+          "why": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+          "optionExplanations": {
+            "0": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "1": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "2": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "3": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
+          },
+          "difficulty": "media",
+          "generatedBy": "editorial-curated-v3",
+          "auditStatus": "REVISADA_EDITORIALMENTE_COBERTURA_UNICA",
+          "sourceCheck": {
+            "status": "VERIFICADA_ARTICULO_A_ARTICULO",
+            "reference": "Ley 2586 de 2026, arts. 1, 112 y 114",
+            "url": [
+              "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm"
+            ],
+            "verifiedAt": "2026-10-19",
+            "articles": [
+              {
+                "norma": "Ley 2586 de 2026",
+                "articulos": "arts. 1, 112 y 114",
+                "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm",
+                "clase": "ley"
+              }
+            ]
+          },
+          "basis": {
+            "studyEssential": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
+          },
+          "questionQualityNote": "Caso y clave cotejados con el contenido de estudio; artículo o fuente técnica registrado en sourceCheck.",
+          "normativeAudit": {
+            "status": "VERIFICADA",
+            "proposition": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
             "checkedAt": "2026-10-19"
           }
         }
@@ -2344,7 +2344,7 @@
         "essentials": [
           "La autoridad debe identificar una conducta descrita previamente, el sujeto responsable, el elemento temporal y la sanción prevista para el supuesto.",
           "En materia tributaria se revisan las reglas del Estatuto Tributario sobre sanciones, gradualidad, reducciones, firmeza y procedimiento; no se trasladan automáticamente a aduanas o cambios internacionales.",
-          "La Ley 2586 de 2026 es el régimen legal aduanero vigente desde el 19 de junio de 2026; derogó el Decreto Ley 920 de 2023. Para operaciones y procesos anteriores se analiza el régimen transitorio y la favorabilidad, no se aplica mecánicamente la regla actual.",
+          "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones aduaneras se parte de la norma vigente al inicio de la operación; tras comparar el caso concreto, aplique de oficio una norma posterior solo si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
           "La decisión debe motivar hechos probados, norma aplicable, adecuación típica, cálculo, reducción o agravación y respuesta a los argumentos del investigado."
         ],
         "route": [
@@ -2361,15 +2361,15 @@
           "Desconocer reglas de transición o favorabilidad."
         ],
         "caseStudy": {
-          "scenario": "En 2026 se detecta una posible infracción aduanera. La operación comenzó antes del 19 de junio, pero el acto de fondo aún no está en firme.",
+          "scenario": "Una operación aduanera se inició el 18 de junio de 2026. El procedimiento sancionatorio comenzó el 22 de junio, después de la entrada en vigor de la Ley 2586. Antes de que el acto de fondo quede en firme, se advierte que la nueva ley podría prever una sanción más favorable.",
           "question": "¿Qué debe hacer el analista antes de proponer la sanción?",
           "options": [
-            "Aplicar siempre la Ley 2586 por ser la norma más nueva.",
-            "Aplicar siempre el Decreto 920 porque la operación empezó bajo ese régimen.",
-            "Determinar fecha de inicio, norma aplicable y transición, y comparar favorabilidad cuando proceda antes de motivar la decisión."
+            "Aplicar toda la Ley 2586 automáticamente por ser posterior.",
+            "Aplicar siempre el régimen vigente al inicio de la operación sin revisar favorabilidad.",
+            "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones aduaneras se parte de la norma vigente al inicio de la operación; tras comparar el caso concreto, aplique de oficio una norma posterior solo si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           ],
           "answer": 2,
-          "why": "La Ley 2586 contiene reglas transitorias para operaciones y procesos anteriores, además del principio de favorabilidad; el resultado requiere análisis del caso y no una regla automática."
+          "why": "Los artículos 1 y 112 distinguen el régimen sustantivo según el inicio de la operación y permiten favorabilidad solo tras comparar el caso concreto; el inicio posterior del procedimiento también importa para determinar las reglas procesales."
         },
         "references": [
           {
@@ -2377,7 +2377,7 @@
             "url": "https://normograma.dian.gov.co/dian/compilacion/docs/estatuto_tributario.htm"
           },
           {
-            "name": "Ley 2586 de 2026, régimen sancionatorio y transición aduanera",
+            "name": "Ley 2586 de 2026, arts. 1, 112 y 114",
             "url": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm"
           }
         ],
@@ -8443,214 +8443,186 @@
       ],
       "questions": [
         {
-          "case": "Una declaración presentada antes del 19 de junio de 2026 se investiga después de esa fecha y la nueva ley parece reducir una sanción. El proceso no está en firme.",
+          "case": "Una operación aduanera se inició el 18 de junio de 2026. El procedimiento sancionatorio comenzó el 22 de junio, después de la entrada en vigor de la Ley 2586. Antes de que el acto de fondo quede en firme, se advierte que la nueva ley podría prever una sanción más favorable.",
           "prompt": "¿Qué criterio debe aplicar el servidor para resolver la situación?",
           "options": [
             "El Decreto 1165 de 2019 contiene el régimen sustancial aduanero y ha sido modificado; consulte texto vigente y reglas de transición.",
-            "La Ley 2586 de 2026 regula desde su vigencia infracciones, sanciones, decomiso y procedimiento aduanero; su artículo 112 trata transición para operaciones/procesos anteriores y favorabilidad.",
+            "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
             "Revise mercancía, clasificación, origen, valor, régimen, modalidad, declaración, documentos soporte, responsables y levante.",
             "Aprehensión/decomiso, liquidación oficial de tributos y sanción son decisiones distintas aunque puedan coexistir."
           ],
-          "answer": 2,
-          "why": "Correcta: responde al caso porque aplica este criterio de Fiscalización aduanera: Revise mercancía, clasificación, origen, valor, régimen, modalidad, declaración, documentos soporte, responsables y levante.",
+          "answer": 1,
+          "why": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
           "optionExplanations": {
-            "0": "Distractor: El Decreto 1165 de 2019 contiene el régimen sustancial aduanero y ha sido modificado; consulte texto vigente y reglas de transición.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "1": "Distractor: La Ley 2586 de 2026 regula desde su vigencia infracciones, sanciones, decomiso y procedimiento aduanero; su artículo 112 trata transición para operaciones/procesos anteriores y favorabilidad.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "2": "Correcta: responde al caso porque aplica este criterio de Fiscalización aduanera: Revise mercancía, clasificación, origen, valor, régimen, modalidad, declaración, documentos soporte, responsables y levante.",
-            "3": "Distractor: Aprehensión/decomiso, liquidación oficial de tributos y sanción son decisiones distintas aunque puedan coexistir.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso."
+            "0": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "1": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "2": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "3": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           },
           "difficulty": "media",
           "generatedBy": "editorial-curated-v3",
           "auditStatus": "REVISADA_EDITORIALMENTE_COBERTURA_UNICA",
           "sourceCheck": {
             "status": "VERIFICADA_ARTICULO_A_ARTICULO",
-            "reference": "Decreto 1165 de 2019, arts. 3-8, 110, 151-152, según la operación; Ley 2586 de 2026, arts. 1-5 y 112 para infracciones y transición",
+            "reference": "Ley 2586 de 2026, arts. 1, 112 y 114",
             "url": [
-              "https://normograma.dian.gov.co/dian/compilacion/docs/decreto_1165_2019.htm",
               "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm"
             ],
             "verifiedAt": "2026-10-19",
             "articles": [
               {
-                "norma": "Decreto 1165 de 2019",
-                "articulos": "arts. 3-8, 110, 151-152, según la operación",
-                "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/decreto_1165_2019.htm",
-                "clase": "ley"
-              },
-              {
                 "norma": "Ley 2586 de 2026",
-                "articulos": "arts. 1-5 y 112 para infracciones y transición",
+                "articulos": "arts. 1, 112 y 114",
                 "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm",
                 "clase": "ley"
               }
             ]
           },
           "basis": {
-            "studyEssential": "Revise mercancía, clasificación, origen, valor, régimen, modalidad, declaración, documentos soporte, responsables y levante."
+            "studyEssential": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           },
           "questionQualityNote": "Caso y clave cotejados con el contenido de estudio; artículo o fuente técnica registrado en sourceCheck.",
           "normativeAudit": {
             "status": "VERIFICADA",
-            "proposition": "Revise mercancía, clasificación, origen, valor, régimen, modalidad, declaración, documentos soporte, responsables y levante.",
+            "proposition": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
             "checkedAt": "2026-10-19"
           }
         },
         {
-          "case": "Una declaración presentada antes del 19 de junio de 2026 se investiga después de esa fecha y la nueva ley parece reducir una sanción. El proceso no está en firme.",
+          "case": "Una operación aduanera se inició el 18 de junio de 2026. El procedimiento sancionatorio comenzó el 22 de junio, después de la entrada en vigor de la Ley 2586. Antes de que el acto de fondo quede en firme, se advierte que la nueva ley podría prever una sanción más favorable.",
           "prompt": "¿Qué criterio debe aplicar el servidor para resolver la situación?",
           "options": [
             "El Decreto 1165 de 2019 contiene el régimen sustancial aduanero y ha sido modificado; consulte texto vigente y reglas de transición.",
             "Aprehensión/decomiso, liquidación oficial de tributos y sanción son decisiones distintas aunque puedan coexistir.",
-            "La Ley 2586 de 2026 regula desde su vigencia infracciones, sanciones, decomiso y procedimiento aduanero; su artículo 112 trata transición para operaciones/procesos anteriores y favorabilidad.",
+            "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
             "Revise mercancía, clasificación, origen, valor, régimen, modalidad, declaración, documentos soporte, responsables y levante."
           ],
-          "answer": 1,
-          "why": "Correcta: responde al caso porque aplica este criterio de Fiscalización aduanera: Aprehensión/decomiso, liquidación oficial de tributos y sanción son decisiones distintas aunque puedan coexistir.",
+          "answer": 2,
+          "why": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
           "optionExplanations": {
-            "0": "Distractor: El Decreto 1165 de 2019 contiene el régimen sustancial aduanero y ha sido modificado; consulte texto vigente y reglas de transición.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "1": "Correcta: responde al caso porque aplica este criterio de Fiscalización aduanera: Aprehensión/decomiso, liquidación oficial de tributos y sanción son decisiones distintas aunque puedan coexistir.",
-            "2": "Distractor: La Ley 2586 de 2026 regula desde su vigencia infracciones, sanciones, decomiso y procedimiento aduanero; su artículo 112 trata transición para operaciones/procesos anteriores y favorabilidad.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "3": "Distractor: Revise mercancía, clasificación, origen, valor, régimen, modalidad, declaración, documentos soporte, responsables y levante.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso."
+            "0": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "1": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "2": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "3": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           },
           "difficulty": "media",
           "generatedBy": "editorial-curated-v3",
           "auditStatus": "REVISADA_EDITORIALMENTE_COBERTURA_UNICA",
           "sourceCheck": {
             "status": "VERIFICADA_ARTICULO_A_ARTICULO",
-            "reference": "Decreto 1165 de 2019, arts. 3-8, 110, 151-152, según la operación; Ley 2586 de 2026, arts. 1-5 y 112 para infracciones y transición",
+            "reference": "Ley 2586 de 2026, arts. 1, 112 y 114",
             "url": [
-              "https://normograma.dian.gov.co/dian/compilacion/docs/decreto_1165_2019.htm",
               "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm"
             ],
             "verifiedAt": "2026-10-19",
             "articles": [
               {
-                "norma": "Decreto 1165 de 2019",
-                "articulos": "arts. 3-8, 110, 151-152, según la operación",
-                "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/decreto_1165_2019.htm",
-                "clase": "ley"
-              },
-              {
                 "norma": "Ley 2586 de 2026",
-                "articulos": "arts. 1-5 y 112 para infracciones y transición",
+                "articulos": "arts. 1, 112 y 114",
                 "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm",
                 "clase": "ley"
               }
             ]
           },
           "basis": {
-            "studyEssential": "Aprehensión/decomiso, liquidación oficial de tributos y sanción son decisiones distintas aunque puedan coexistir."
+            "studyEssential": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           },
           "questionQualityNote": "Caso y clave cotejados con el contenido de estudio; artículo o fuente técnica registrado en sourceCheck.",
           "normativeAudit": {
             "status": "VERIFICADA",
-            "proposition": "Aprehensión/decomiso, liquidación oficial de tributos y sanción son decisiones distintas aunque puedan coexistir.",
+            "proposition": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
             "checkedAt": "2026-10-19"
           }
         },
         {
-          "case": "Una declaración presentada antes del 19 de junio de 2026 se investiga después de esa fecha y la nueva ley parece reducir una sanción. El proceso no está en firme.",
+          "case": "Una operación aduanera se inició el 18 de junio de 2026. El procedimiento sancionatorio comenzó el 22 de junio, después de la entrada en vigor de la Ley 2586. Antes de que el acto de fondo quede en firme, se advierte que la nueva ley podría prever una sanción más favorable.",
           "prompt": "A partir del caso, ¿qué conclusión está mejor sustentada?",
           "options": [
-            "La Ley 2586 de 2026 regula desde su vigencia infracciones, sanciones, decomiso y procedimiento aduanero; su artículo 112 trata transición para operaciones/procesos anteriores y favorabilidad.",
+            "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
             "El Decreto 1165 de 2019 contiene el régimen sustancial aduanero y ha sido modificado; consulte texto vigente y reglas de transición.",
             "Revise mercancía, clasificación, origen, valor, régimen, modalidad, declaración, documentos soporte, responsables y levante.",
             "Aprehensión/decomiso, liquidación oficial de tributos y sanción son decisiones distintas aunque puedan coexistir."
           ],
           "answer": 0,
-          "why": "Correcta: responde al caso porque aplica este criterio de Fiscalización aduanera: La Ley 2586 de 2026 regula desde su vigencia infracciones, sanciones, decomiso y procedimiento aduanero; su artículo 112 trata transición para operaciones/procesos anteriores y favorabilidad.",
+          "why": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
           "optionExplanations": {
-            "0": "Correcta: responde al caso porque aplica este criterio de Fiscalización aduanera: La Ley 2586 de 2026 regula desde su vigencia infracciones, sanciones, decomiso y procedimiento aduanero; su artículo 112 trata transición para operaciones/procesos anteriores y favorabilidad.",
-            "1": "Distractor: El Decreto 1165 de 2019 contiene el régimen sustancial aduanero y ha sido modificado; consulte texto vigente y reglas de transición.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "2": "Distractor: Revise mercancía, clasificación, origen, valor, régimen, modalidad, declaración, documentos soporte, responsables y levante.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "3": "Distractor: Aprehensión/decomiso, liquidación oficial de tributos y sanción son decisiones distintas aunque puedan coexistir.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso."
+            "0": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "1": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "2": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "3": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           },
           "difficulty": "alta",
           "generatedBy": "editorial-curated-v3",
           "auditStatus": "REVISADA_EDITORIALMENTE_COBERTURA_UNICA",
           "sourceCheck": {
             "status": "VERIFICADA_ARTICULO_A_ARTICULO",
-            "reference": "Ley 2586 de 2026, arts. 1-5 y 112; Decreto 1165 de 2019, arts. 3-8, obligación y régimen sustancial",
+            "reference": "Ley 2586 de 2026, arts. 1, 112 y 114",
             "url": [
-              "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm",
-              "https://normograma.dian.gov.co/dian/compilacion/docs/decreto_1165_2019.htm"
+              "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm"
             ],
             "verifiedAt": "2026-10-19",
             "articles": [
               {
                 "norma": "Ley 2586 de 2026",
-                "articulos": "arts. 1-5 y 112",
+                "articulos": "arts. 1, 112 y 114",
                 "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm",
-                "clase": "ley"
-              },
-              {
-                "norma": "Decreto 1165 de 2019",
-                "articulos": "arts. 3-8, obligación y régimen sustancial",
-                "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/decreto_1165_2019.htm",
                 "clase": "ley"
               }
             ]
           },
           "basis": {
-            "studyEssential": "La Ley 2586 de 2026 regula desde su vigencia infracciones, sanciones, decomiso y procedimiento aduanero; su artículo 112 trata transición para operaciones/procesos anteriores y favorabilidad."
+            "studyEssential": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           },
           "questionQualityNote": "Caso y clave cotejados con el contenido de estudio; artículo o fuente técnica registrado en sourceCheck.",
           "normativeAudit": {
             "status": "VERIFICADA",
-            "proposition": "La Ley 2586 de 2026 regula desde su vigencia infracciones, sanciones, decomiso y procedimiento aduanero; su artículo 112 trata transición para operaciones/procesos anteriores y favorabilidad.",
+            "proposition": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
             "checkedAt": "2026-10-19"
           }
         },
         {
-          "case": "Una declaración presentada antes del 19 de junio de 2026 se investiga después de esa fecha y la nueva ley parece reducir una sanción. El proceso no está en firme.",
+          "case": "Una operación aduanera se inició el 18 de junio de 2026. El procedimiento sancionatorio comenzó el 22 de junio, después de la entrada en vigor de la Ley 2586. Antes de que el acto de fondo quede en firme, se advierte que la nueva ley podría prever una sanción más favorable.",
           "prompt": "¿Cuál actuación se ajusta mejor al principio descrito?",
           "options": [
             "El Decreto 1165 de 2019 contiene el régimen sustancial aduanero y ha sido modificado; consulte texto vigente y reglas de transición.",
-            "La Ley 2586 de 2026 regula desde su vigencia infracciones, sanciones, decomiso y procedimiento aduanero; su artículo 112 trata transición para operaciones/procesos anteriores y favorabilidad.",
+            "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
             "Revise mercancía, clasificación, origen, valor, régimen, modalidad, declaración, documentos soporte, responsables y levante.",
             "Aprehensión/decomiso, liquidación oficial de tributos y sanción son decisiones distintas aunque puedan coexistir."
           ],
-          "answer": 0,
-          "why": "Correcta: responde al caso porque aplica este criterio de Fiscalización aduanera: El Decreto 1165 de 2019 contiene el régimen sustancial aduanero y ha sido modificado; consulte texto vigente y reglas de transición.",
+          "answer": 1,
+          "why": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
           "optionExplanations": {
-            "0": "Correcta: responde al caso porque aplica este criterio de Fiscalización aduanera: El Decreto 1165 de 2019 contiene el régimen sustancial aduanero y ha sido modificado; consulte texto vigente y reglas de transición.",
-            "1": "Distractor: La Ley 2586 de 2026 regula desde su vigencia infracciones, sanciones, decomiso y procedimiento aduanero; su artículo 112 trata transición para operaciones/procesos anteriores y favorabilidad.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "2": "Distractor: Revise mercancía, clasificación, origen, valor, régimen, modalidad, declaración, documentos soporte, responsables y levante.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso.",
-            "3": "Distractor: Aprehensión/decomiso, liquidación oficial de tributos y sanción son decisiones distintas aunque puedan coexistir.. Puede ser pertinente en otro supuesto, pero no resuelve el aspecto central descrito en el caso."
+            "0": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "1": "Correcta: Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "2": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
+            "3": "Distractor: esta opción no resuelve el criterio temporal del caso. Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           },
           "difficulty": "alta",
           "generatedBy": "editorial-curated-v3",
           "auditStatus": "REVISADA_EDITORIALMENTE_COBERTURA_UNICA",
           "sourceCheck": {
             "status": "VERIFICADA_ARTICULO_A_ARTICULO",
-            "reference": "Ley 2586 de 2026, arts. 1-5 y 112; Decreto 1165 de 2019, arts. 3-8, obligación y régimen sustancial",
+            "reference": "Ley 2586 de 2026, arts. 1, 112 y 114",
             "url": [
-              "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm",
-              "https://normograma.dian.gov.co/dian/compilacion/docs/decreto_1165_2019.htm"
+              "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm"
             ],
             "verifiedAt": "2026-10-19",
             "articles": [
               {
                 "norma": "Ley 2586 de 2026",
-                "articulos": "arts. 1-5 y 112",
+                "articulos": "arts. 1, 112 y 114",
                 "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm",
-                "clase": "ley"
-              },
-              {
-                "norma": "Decreto 1165 de 2019",
-                "articulos": "arts. 3-8, obligación y régimen sustancial",
-                "fuente": "https://normograma.dian.gov.co/dian/compilacion/docs/decreto_1165_2019.htm",
                 "clase": "ley"
               }
             ]
           },
           "basis": {
-            "studyEssential": "El Decreto 1165 de 2019 contiene el régimen sustancial aduanero y ha sido modificado; consulte texto vigente y reglas de transición."
+            "studyEssential": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           },
           "questionQualityNote": "Caso y clave cotejados con el contenido de estudio; artículo o fuente técnica registrado en sourceCheck.",
           "normativeAudit": {
             "status": "VERIFICADA",
-            "proposition": "El Decreto 1165 de 2019 contiene el régimen sustancial aduanero y ha sido modificado; consulte texto vigente y reglas de transición.",
+            "proposition": "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
             "checkedAt": "2026-10-19"
           }
         }
@@ -8660,7 +8632,7 @@
         "essentials": [
           "Revise mercancía, clasificación, origen, valor, régimen, modalidad, declaración, documentos soporte, responsables y levante.",
           "El Decreto 1165 de 2019 contiene el régimen sustancial aduanero y ha sido modificado; consulte texto vigente y reglas de transición.",
-          "La Ley 2586 de 2026 regula desde su vigencia infracciones, sanciones, decomiso y procedimiento aduanero; su artículo 112 trata transición para operaciones/procesos anteriores y favorabilidad.",
+          "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones aduaneras se parte de la norma vigente al inicio de la operación; tras comparar el caso concreto, aplique de oficio una norma posterior solo si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.",
           "Aprehensión/decomiso, liquidación oficial de tributos y sanción son decisiones distintas aunque puedan coexistir."
         ],
         "route": [
@@ -8676,15 +8648,15 @@
           "Aplicar causal de aprehensión sin verificar elementos y excepciones."
         ],
         "caseStudy": {
-          "scenario": "Una declaración presentada antes del 19 de junio de 2026 se investiga después de esa fecha y la nueva ley parece reducir una sanción. El proceso no está en firme.",
+          "scenario": "Una operación aduanera se inició el 18 de junio de 2026. El procedimiento sancionatorio comenzó el 22 de junio, después de la entrada en vigor de la Ley 2586. Antes de que el acto de fondo quede en firme, se advierte que la nueva ley podría prever una sanción más favorable.",
           "question": "¿Qué debe incluir el análisis?",
           "options": [
-            "Aplicar automáticamente toda la Ley 2586 a cualquier aspecto del expediente.",
-            "Aplicar automáticamente el régimen anterior sin revisar favorabilidad.",
-            "Analizar fecha de operación, regla transitoria, equivalencia típica y favorabilidad, separando las etapas ya iniciadas."
+            "Aplicar toda la Ley 2586 automáticamente por ser posterior.",
+            "Aplicar siempre el régimen vigente al inicio de la operación sin revisar favorabilidad.",
+            "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones aduaneras se parte de la norma vigente al inicio de la operación; tras comparar el caso concreto, aplique de oficio una norma posterior solo si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente."
           ],
           "answer": 2,
-          "why": "La Ley 2586 prevé transición y favorabilidad. La respuesta depende de operación, conducta y estado procesal concretos."
+          "why": "Los artículos 1 y 112 distinguen el régimen sustantivo según el inicio de la operación y permiten favorabilidad solo tras comparar el caso concreto; el inicio posterior del procedimiento también importa para determinar las reglas procesales."
         },
         "references": [
           {
@@ -8692,7 +8664,7 @@
             "url": "https://normograma.dian.gov.co/dian/compilacion/docs/decreto_1165_2019.htm"
           },
           {
-            "name": "Ley 2586 de 2026, especialmente arts. 1 y 112",
+            "name": "Ley 2586 de 2026, arts. 1, 112 y 114",
             "url": "https://normograma.dian.gov.co/dian/compilacion/docs/ley_2586_2026.htm"
           }
         ],

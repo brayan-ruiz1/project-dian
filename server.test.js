@@ -79,6 +79,32 @@ test("el banco evita repeticiones de caso, formato y respuesta dentro de cada in
   }
 });
 
+test("las preguntas aduaneras aplican la transición de la Ley 2586 según la fecha de operación y del proceso", () => {
+  const expectedRule = "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.";
+  const questions = guide.indicators
+    .filter((indicator) => ["sanciones", "fiscalizacion", "fiscalizacion-aduanera"].includes(indicator.id))
+    .flatMap((indicator) => indicator.questions)
+    .filter((question) => question.case?.includes("se inició el 18 de junio de 2026"));
+
+  assert.equal(questions.length, 8);
+  for (const question of questions) {
+    assert.equal(question.options[question.answer], expectedRule);
+    assert.equal(question.why, `Correcta: ${expectedRule}`);
+    assert.match(question.sourceCheck.reference, /Ley 2586 de 2026, arts\. 1, 112 y 114/);
+  }
+
+  for (const id of ["sanciones", "fiscalizacion-aduanera"]) {
+    const study = guide.indicators.find((indicator) => indicator.id === id).study;
+    const caseStudy = study.caseStudy;
+    const answer = caseStudy.options[caseStudy.answer];
+    assert.match(caseStudy.scenario, /18 de junio de 2026.*22 de junio/);
+    assert.ok(answer.includes("al inicio de la operación"));
+    assert.ok(answer.includes("solo si resulta más favorable"));
+    assert.ok(answer.includes("régimen procedimental vigente"));
+    assert.ok(study.essentials.some((point) => point.includes("artículos 1, 112 y 114")));
+  }
+});
+
 test("la guía prioriza los ejes reales de la prueba DIAN 2676", () => {
   const coverageText = JSON.stringify(guide).toLowerCase();
   const requiredTopics = [
