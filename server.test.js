@@ -140,6 +140,18 @@ test("la interfaz ofrece cambio de tema y cierre del menú lateral", () => {
   assert.match(css, /body\.theme-dark|--surface|--panel/);
 });
 
+test("el botón repetir preguntas se muestra para temas con práctica y ejecuta su reset antes de navegar", () => {
+  const script = fs.readFileSync(path.join(__dirname, "public", "app.js"), "utf8");
+  const resetActionIndex = script.indexOf('if (button.dataset.action === "reset-indicator-practice")');
+  const genericIndicatorIndex = script.indexOf('if (button.dataset.indicator) { renderLesson(button.dataset.indicator); return; }');
+
+  assert.ok(resetActionIndex !== -1, "Falta la acción de reset");
+  assert.ok(genericIndicatorIndex !== -1, "Falta la navegación por indicador");
+  assert.ok(resetActionIndex < genericIndicatorIndex, "La acción de reset debe ejecutarse antes que la navegación genérica");
+  assert.ok(script.includes("!indicator.study?.reflections"), "La acción debe mostrarse en temas con práctica");
+  assert.ok(!script.includes("answeredHere && !indicator.study?.reflections"), "La visibilidad no debe depender de que ya se haya respondido algo");
+});
+
 test("la API entrega la guía, publica la página y rechaza progreso inválido", async (context) => {
   const server = http.createServer(handler);
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));

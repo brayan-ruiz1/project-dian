@@ -34,6 +34,10 @@ const correctCount = () => Object.values(progress.answers).filter((answer) => an
 const practiceCount = (indicator) => indicator.study?.reflections?.length
   ?? (indicator.questions.length + (indicator.study?.checks?.length || 0));
 
+function scrollToTop() {
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+}
+
 function applyTheme(themeName) {
   const theme = themeName === "dark" ? "dark" : "light";
   document.body.classList.toggle("theme-dark", theme === "dark");
@@ -207,6 +211,7 @@ function renderSection(sectionId, search = "") {
   if (!section) return;
   const indicators = guide.indicators.filter((item) => item.section === sectionId
     && (!search || item.title.toLocaleLowerCase("es").includes(search.toLocaleLowerCase("es"))));
+  scrollToTop();
   const total = guide.indicators.filter((item) => item.section === sectionId).length;
   const done = guide.indicators.filter((item) => item.section === sectionId && progress.completedSections.includes(item.id)).length;
   app.innerHTML = `
@@ -224,6 +229,7 @@ function renderSection(sectionId, search = "") {
 function renderAllIndicators(search = "") {
   const matches = guide.indicators.filter((indicator) => !search
     || indicator.title.toLocaleLowerCase("es").includes(search.toLocaleLowerCase("es")));
+  scrollToTop();
   view = { name: "all-indicators" };
   breadcrumb.textContent = "Todos los indicadores";
   setActiveNav("home");
@@ -246,6 +252,7 @@ function renderAllIndicators(search = "") {
 function renderLesson(indicatorId) {
   const indicator = getIndicator(indicatorId);
   if (!indicator) return;
+  scrollToTop();
   const section = getSection(indicator.section);
   const ordered = guide.indicators.filter((item) => item.section === indicator.section);
   const index = ordered.findIndex((item) => item.id === indicatorId);
@@ -286,7 +293,7 @@ function renderLesson(indicatorId) {
       </div>
       <aside class="lesson-aside">
         <article class="aside-card"><div class="eyebrow">INDICADOR</div><h3 style="margin-top:8px">${esc(indicator.type)}</h3><p>Evalúa comprensión y aplicación práctica de este contenido.</p></article>
-        <article class="aside-card"><div class="eyebrow">${indicator.study?.reflections ? "AFIRMACIONES DE PRÁCTICA" : "PREGUNTAS DE PRÁCTICA"}</div><h3 style="margin-top:8px">${indicator.study?.reflections ? `${indicator.study.reflections.length} afirmaciones` : `${practiceQuestions.length} ejercicios`}</h3><p>${indicator.study?.reflections ? "Ejercicio de autorreflexión sin puntaje ni clave de respuestas." : "Material didáctico independiente; no son ítems oficiales."}</p>${answeredHere && !indicator.study?.reflections ? `<button class="secondary-button" data-action="reset-indicator-practice" data-indicator="${esc(indicator.id)}">Repetir las preguntas</button>` : ""}</article>
+        <article class="aside-card"><div class="eyebrow">${indicator.study?.reflections ? "AFIRMACIONES DE PRÁCTICA" : "PREGUNTAS DE PRÁCTICA"}</div><h3 style="margin-top:8px">${indicator.study?.reflections ? `${indicator.study.reflections.length} afirmaciones` : `${practiceQuestions.length} ejercicios`}</h3><p>${indicator.study?.reflections ? "Ejercicio de autorreflexión sin puntaje ni clave de respuestas." : "Material didáctico independiente; no son ítems oficiales."}</p>${!indicator.study?.reflections ? `<button class="secondary-button" data-action="reset-indicator-practice" data-indicator="${esc(indicator.id)}">Repetir las preguntas</button>` : ""}</article>
         <article class="aside-card"><div class="eyebrow">RECUERDA</div><p>En los casos normativos, identifica la fecha de los hechos y verifica el texto vigente antes de aplicar una regla.</p></article>
       </aside>
     </div>`;
@@ -509,6 +516,10 @@ document.addEventListener("click", async (event) => {
     item?.querySelectorAll("[data-likert]").forEach((option) => option.classList.toggle("selected", option === button));
     return;
   }
+  if (button.dataset.action === "reset-indicator-practice") {
+    await resetIndicatorPractice(button.dataset.indicator);
+    return;
+  }
   if (button.dataset.view === "home") { goHome(); return; }
   if (button.dataset.action === "final-simulation") { startFinalSimulation(); return; }
   if (button.dataset.view === "exam" || button.dataset.action === "exam") { startExam(); return; }
@@ -526,10 +537,6 @@ document.addEventListener("click", async (event) => {
     return;
   }
   if (button.dataset.action === "toggle-complete") { await toggleComplete(button.dataset.indicator); return; }
-  if (button.dataset.action === "reset-indicator-practice") {
-    await resetIndicatorPractice(button.dataset.indicator);
-    return;
-  }
   if (button.dataset.practiceOption !== undefined) {
     const card = button.closest("[data-practice]");
     if (card) await answerPractice(card, Number(button.dataset.practiceOption));
