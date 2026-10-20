@@ -688,3 +688,240 @@ button, select, input { max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+body.theme-dark .eyebrow,
+body.theme-dark .question-number,
+body.theme-dark .section-count,
+body.theme-dark .subtle,
+body.theme-dark .breadcrumb,
+body.theme-dark .top-meta,
+body.theme-dark .stat-label,
+body.theme-dark .continue-row small,
+body.theme-dark .indicator-row small,
+body.theme-dark .footer-note,
+body.theme-dark .side-label,
+body.theme-dark .side-footer small,
+body.theme-dark .exam-progress,
+body.theme-dark .search-input,
+body.theme-dark .result-item p,
+body.theme-dark .aside-card p,
+body.theme-dark .study-case p,
+body.theme-dark .study-case summary,
+body.theme-dark .study-references a,
+body.theme-dark .worked-example p,
+body.theme-dark .worked-example li,
+body.theme-dark .study-columns ul,
+body.theme-dark .study-columns ol,
+body.theme-dark .study-pitfalls ul,
+body.theme-dark .lesson-card p,
+body.theme-dark .lesson-card .lead,
+body.theme-dark .point-list li,
+body.theme-dark .tip-box,
+body.theme-dark .option,
+body.theme-dark .feedback,
+body.theme-dark .likert-options button,
+body.theme-dark .reflection-item p,
+body.theme-dark .exam-intro p,
+body.theme-dark .result-score p,
+body.theme-dark .question-case,
+body.theme-dark .question-prompt,
+body.theme-dark .deep-study p,
+body.theme-dark .deep-study li,
+body.theme-dark .study-columns h3,
+body.theme-dark .study-pitfalls h3,
+body.theme-dark .study-references h3,
+body.theme-dark .brand small,
+body.theme-dark .exam-badge,
+body.theme-dark .mini-shield,
+body.theme-dark .menu-toggle,
+body.theme-dark .theme-toggle,
+body.theme-dark .sidebar-close {
+  color: var(--text-secondary) !important;
+}
+
+body.theme-dark .eyebrow,
+body.theme-dark .question-number,
+body.theme-dark .lesson-header .eyebrow,
+body.theme-dark .top-meta,
+body.theme-dark .stat-label,
+body.theme-dark .section-count,
+body.theme-dark .side-label,
+body.theme-dark .exam-badge,
+body.theme-dark .breadcrumb strong,
+body.theme-dark .footer-note {
+  letter-spacing: 0.08em;
+}
+
+body.theme-dark .section-count,
+body.theme-dark .breadcrumb,
+body.theme-dark .top-meta,
+body.theme-dark .stat-label,
+body.theme-dark .continue-row small,
+body.theme-dark .aside-card p,
+body.theme-dark .indicator-row small,
+body.theme-dark .search-input,
+body.theme-dark .exam-progress {
+  color: #d6e1f7 !important;
+}
+
+body.theme-dark .eyebrow,
+body.theme-dark .question-number,
+body.theme-dark .brand strong,
+body.theme-dark .hero .eyebrow,
+body.theme-dark .section-heading h2,
+body.theme-dark .lesson-card h2,
+body.theme-dark .deep-study > h2,
+body.theme-dark .study-columns h3,
+body.theme-dark .study-pitfalls h3,
+body.theme-dark .study-references h3,
+body.theme-dark .indicator-row strong,
+body.theme-dark .continue-row strong,
+body.theme-dark .result-item strong,
+body.theme-dark .question-prompt,
+body.theme-dark .lesson-header h1,
+body.theme-dark h1,
+body.theme-dark h2,
+body.theme-dark h3 {
+  color: #f2f6ff !important;
+}
+
+body.theme-dark .option,
+body.theme-dark .likert-options button,
+body.theme-dark .search-input,
+body.theme-dark .exam-controls select {
+  background: var(--surface-alt) !important;
+  border-color: var(--border-soft) !important;
+  color: #edf3ff !important;
+}
+
+body.theme-dark .option-letter {
+  color: #f2f6ff !important;
+  border-color: rgba(255,255,255,0.18) !important;
+}
+
+body.theme-dark .option.selected,
+body.theme-dark .likert-options button.selected {
+  background: rgba(124, 110, 255, 0.18) !important;
+  border-color: #8e82ff !important;
+  color: #f5f2ff !important;
+}
+
+body.theme-dark .option.correct {
+  background: rgba(76, 204, 144, 0.18) !important;
+  border-color: #66d7a0 !important;
+  color: #ebfff5 !important;
+}
+
+body.theme-dark .option.incorrect {
+  background: rgba(231, 109, 101, 0.18) !important;
+  border-color: #f08a83 !important;
+  color: #fff0ee !important;
+}
+
+body.theme-dark .dropdown,
+body.theme-dark select,
+body.theme-dark .exam-controls select {
+  color: #edf3ff !important;
+}
+
+body.theme-dark .exam-controls select option {
+  background: #111d31;
+  color: #edf3ff;
+}
+
+body.theme-dark .theme-toggle,
+body.theme-dark .menu-toggle,
+body.theme-dark .sidebar-close {
+  background: var(--surface-alt) !important;
+  border-color: var(--border-soft) !important;
+  color: #f2f6ff !important;
+}
+
+body.theme-dark .exam-badge,
+body.theme-dark .mini-shield,
+body.theme-dark .side-footer {
+  background: rgba(255,255,255,0.03) !important;
+  border-color: var(--border-soft) !important;
+}
+
+body.theme-dark .worked-example {
+  background: rgba(18, 32, 51, 0.9) !important;
+  border-color: rgba(96, 126, 194, 0.4) !important;
+}
+
+body.theme-dark .worked-example .example-caveat {
+  background: rgba(227, 177, 84, 0.12) !important;
+  color: #f7d38f !important;
+}
+
+body.theme-dark .study-case {
+  background: rgba(19, 28, 43, 0.9) !important;
+  border-color: rgba(120, 143, 216, 0.35) !important;
+}
+
+body.theme-dark .result-item {
+  background: rgba(18, 32, 51, 0.72) !important;
+}
+
+body.theme-dark .progress-track {
+  background: #23324d !important;
+}
+
+body.theme-dark .lesson-card .lead,
+body.theme-dark .study-columns ul,
+body.theme-dark .study-columns ol,
+body.theme-dark .study-pitfalls ul,
+body.theme-dark .question-case,
+body.theme-dark .tip-box,
+body.theme-dark .reflection-item p,
+body.theme-dark .deep-study p,
+body.theme-dark .deep-study li {
+  color: #edf3ff !important;
+}
+
+body.theme-dark .indicator-row strong,
+body.theme-dark .section-card h3,
+body.theme-dark .continue-row strong,
+body.theme-dark .side-footer strong,
+body.theme-dark .brand strong,
+body.theme-dark .top-meta #save-status,
+body.theme-dark .breadcrumb strong,
+body.theme-dark .nav-link {
+  color: #f2f6ff !important;
+}
+
+body.theme-dark .nav-link:hover {
+  background: rgba(140, 128, 255, 0.12) !important;
+}
+
+body.theme-dark .nav-link.active {
+  background: rgba(140, 128, 255, 0.18) !important;
+  color: #f2eeff !important;
+}
+
+body.theme-dark .nav-link.active .nav-arrow {
+  color: #f2eeff !important;
+}
+
+body.theme-dark .mini-shield {
+  background: rgba(140, 128, 255, 0.14) !important;
+  color: #e8e3ff !important;
+}
+
+body.theme-dark .small-button,
+body.theme-dark .secondary-button,
+body.theme-dark .primary-button,
+body.theme-dark .text-button {
+  font-weight: 700;
+}
+
+body.theme-dark .menu-toggle:hover,
+body.theme-dark .sidebar-close:hover,
+body.theme-dark .theme-toggle:hover {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: rgba(150, 162, 255, 0.42) !important;
+}
+
+body.theme-dark .sidebar-close {
+  border: 1px solid rgba(255,255,255,0.12) !important;
+}
