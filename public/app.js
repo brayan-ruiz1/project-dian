@@ -7,6 +7,7 @@ const menu = document.querySelector("#sidebar");
 const menuToggle = document.querySelector("#menu-toggle");
 const menuClose = document.querySelector("#sidebar-close");
 const menuBackdrop = document.querySelector("#sidebar-backdrop");
+const themeToggle = document.querySelector("#theme-toggle");
 
 let guide;
 let progress;
@@ -26,11 +27,28 @@ const getIndicator = (id) => guide.indicators.find((indicator) => indicator.id =
 const getSection = (id) => guide.sections.find((section) => section.id === id);
 const questionKey = (indicatorId, index) => `${indicatorId}:${index}`;
 const PROGRESS_STORAGE_KEY = "dian2676-progress-v1";
+const THEME_STORAGE_KEY = "dian2676-theme-v1";
 const emptyProgress = () => ({ answers: {}, completedSections: [], updatedAt: null });
 const answeredCount = () => Object.keys(progress.answers).length;
 const correctCount = () => Object.values(progress.answers).filter((answer) => answer.correct).length;
 const practiceCount = (indicator) => indicator.study?.reflections?.length
   ?? (indicator.questions.length + (indicator.study?.checks?.length || 0));
+
+function applyTheme(themeName) {
+  const theme = themeName === "dark" ? "dark" : "light";
+  document.body.classList.toggle("theme-dark", theme === "dark");
+  document.body.dataset.theme = theme;
+  if (themeToggle) {
+    themeToggle.textContent = theme === "dark" ? "🌙" : "☀️";
+    themeToggle.setAttribute("aria-label", theme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro");
+  }
+  localStorage.setItem(THEME_STORAGE_KEY, theme);
+}
+
+function toggleTheme() {
+  const nextTheme = document.body.dataset.theme === "dark" ? "light" : "dark";
+  applyTheme(nextTheme);
+}
 
 function closeMobileMenu() {
   menu.classList.remove("open");
@@ -543,6 +561,7 @@ document.addEventListener("click", async (event) => {
 menuToggle.addEventListener("click", toggleMobileMenu);
 menuClose.addEventListener("click", closeMobileMenu);
 menuBackdrop.addEventListener("click", closeMobileMenu);
+themeToggle?.addEventListener("click", toggleTheme);
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeMobileMenu();
 });
@@ -558,6 +577,8 @@ async function initialize() {
     if (!progress || !progress.answers || !Array.isArray(progress.completedSections)) {
       throw new Error("La base de datos local de progreso tiene un formato inesperado.");
     }
+    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || "light";
+    applyTheme(savedTheme);
     renderNavigation();
     renderHome();
   } catch (error) {

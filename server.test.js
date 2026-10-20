@@ -129,6 +129,17 @@ test("la guía prioriza los ejes reales de la prueba DIAN 2676", () => {
   }
 });
 
+test("la interfaz ofrece cambio de tema y cierre del menú lateral", () => {
+  const html = fs.readFileSync(path.join(__dirname, "public", "index.html"), "utf8");
+  const css = fs.readFileSync(path.join(__dirname, "public", "styles.css"), "utf8");
+  const script = fs.readFileSync(path.join(__dirname, "public", "app.js"), "utf8");
+
+  assert.match(html, /id="theme-toggle"/);
+  assert.match(html, /id="sidebar-close"/);
+  assert.match(script, /theme-toggle|applyTheme|localStorage.*theme|theme-dark/);
+  assert.match(css, /body\.theme-dark|--surface|--panel/);
+});
+
 test("la API entrega la guía, publica la página y rechaza progreso inválido", async (context) => {
   const server = http.createServer(handler);
   await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
