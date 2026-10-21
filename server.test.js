@@ -79,6 +79,20 @@ test("el banco evita repeticiones de caso, formato y respuesta dentro de cada in
   }
 });
 
+test("el banco no repite el mismo caso y enunciado en diferentes indicadores o preguntas", () => {
+  const seen = new Set();
+  for (const indicator of guide.indicators) {
+    if (indicator.study?.reflections) continue;
+    for (const question of indicator.questions) {
+      const caseText = String(question.case || question.scenario || "").trim().toLowerCase().replace(/\s+/g, " ");
+      const promptText = String(question.prompt || question.question || "").trim().toLowerCase().replace(/\s+/g, " ");
+      const key = `${caseText}::${promptText}`;
+      assert.ok(!seen.has(key), `${indicator.title}: el caso y el enunciado se repiten en otra pregunta del banco`);
+      seen.add(key);
+    }
+  }
+});
+
 test("las preguntas aduaneras aplican la transición de la Ley 2586 según la fecha de operación y del proceso", () => {
   const expectedRule = "Conforme a los artículos 1, 112 y 114 de la Ley 2586 de 2026, para las obligaciones, infracciones y sanciones se parte de la norma vigente al inicio de la operación, sin perjuicio de que, tras comparar el caso concreto, se aplique de oficio la norma posterior si resulta más favorable antes de la firmeza del acto. Como el procedimiento se inició después de la promulgación, verifique también el régimen procedimental vigente; no aplique toda la ley automáticamente.";
   const questions = guide.indicators
