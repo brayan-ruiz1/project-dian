@@ -34,6 +34,25 @@ const correctCount = () => Object.values(progress.answers).filter((answer) => an
 const practiceCount = (indicator) => indicator.study?.reflections?.length
   ?? (indicator.questions.length + (indicator.study?.checks?.length || 0));
 
+function indicatorPracticeKeys(indicator) {
+  if (!indicator || indicator.study?.reflections) return [];
+  return [...indicator.questions, ...(indicator.study?.checks || [])].map((_, index) => questionKey(indicator.id, index));
+}
+
+function autoCompleteIndicator(indicatorId, force = false) {
+  if (!indicatorId) return false;
+  const indicator = getIndicator(indicatorId);
+  if (!indicator) return false;
+  const practiceKeys = indicatorPracticeKeys(indicator);
+  const isDone = force || (practiceKeys.length
+    ? practiceKeys.every((key) => Object.prototype.hasOwnProperty.call(progress.answers, key))
+    : progress.completedSections.includes(indicatorId));
+  if (isDone && !progress.completedSections.includes(indicatorId)) {
+    progress.completedSections.push(indicatorId);
+  }
+  return isDone;
+}
+
 function scrollToTop() {
   window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 }
@@ -252,6 +271,7 @@ function renderAllIndicators(search = "") {
 function renderLesson(indicatorId) {
   const indicator = getIndicator(indicatorId);
   if (!indicator) return;
+  const completed = autoCompleteIndicator(indicatorId);
   scrollToTop();
   const section = getSection(indicator.section);
   const ordered = guide.indicators.filter((item) => item.section === indicator.section);
@@ -274,7 +294,7 @@ function renderLesson(indicatorId) {
           <div class="tip-box"><strong>Cómo llevarlo a la prueba</strong><ul class="check-list">${indicator.practice.map((tip) => `<li>• ${esc(tip)}</li>`).join("")}</ul></div>
           ${indicator.workedExample ? `<article class="worked-example"><h2>${esc(indicator.workedExample.title)}</h2><p>${esc(indicator.workedExample.case)}</p><ol>${indicator.workedExample.steps.map((step) => `<li>${esc(step)}</li>`).join("")}</ol><p class="example-caveat">${esc(indicator.workedExample.caveat)}</p><a href="${esc(indicator.workedExample.source)}" target="_blank" rel="noopener noreferrer">Consultar fuente normativa: Estatuto Tributario, art. 26 ↗</a></article>` : ""}
           ${indicator.study ? `<section class="deep-study"><div class="eyebrow">ESTUDIO EN PROFUNDIDAD</div><h2>${esc(indicator.study.objective)}</h2><div class="study-columns"><article><h3>Conocimientos que debes dominar</h3><ul>${indicator.study.essentials.map((text) => `<li>${esc(text)}</li>`).join("")}</ul></article><article><h3>Ruta de análisis</h3><ol>${indicator.study.route.map((text) => `<li>${esc(text)}</li>`).join("")}</ol></article></div><article class="study-pitfalls"><h3>Errores y confusiones frecuentes</h3><ul>${indicator.study.pitfalls.map((text) => `<li>${esc(text)}</li>`).join("")}</ul></article>${indicator.study.caseStudy ? `<details class="study-case"><summary>Ver caso analizado</summary><p><strong>Situación:</strong> ${esc(indicator.study.caseStudy.scenario)}</p><p><strong>Análisis:</strong> ${esc(indicator.study.caseStudy.why)}</p></details>` : ""}<div class="study-references"><h3>Fuentes para profundizar</h3>${indicator.study.references.map((source) => `<a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.name)} ↗</a>`).join("")}</div></section>` : ""}
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px"><span class="subtle" style="font-size:10px">¿Terminaste de estudiar este tema?</span><button class="${progress.completedSections.includes(indicator.id) ? "secondary-button" : "small-button"}" data-action="toggle-complete" data-indicator="${esc(indicator.id)}">${progress.completedSections.includes(indicator.id) ? "✓ Tema estudiado" : "Marcar como estudiado"}</button></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px"><span class="subtle" style="font-size:10px">¿Terminaste de estudiar este tema?</span><button class="${completed || progress.completedSections.includes(indicator.id) ? "secondary-button" : "small-button"}" data-action="toggle-complete" data-indicator="${esc(indicator.id)}">${completed || progress.completedSections.includes(indicator.id) ? "✓ Tema estudiado" : "Marcar como estudiado"}</button></div>
         </article>
         ${indicator.study?.reflections ? `<section class="reflection-practice"><div class="section-heading"><div><h2>Autorreporte de práctica</h2><p class="subtle">La prueba oficial usa afirmaciones tipo Likert. No hay respuestas correctas: responde pensando en tu conducta habitual.</p></div></div>${indicator.study.reflections.map((statement, statementIndex) => `<article class="reflection-item" data-reflection="${statementIndex}"><p>${esc(statement)}</p><div class="likert-options">${["Totalmente en desacuerdo", "En desacuerdo", "De acuerdo", "Totalmente de acuerdo"].map((label) => `<button type="button" data-likert="${esc(label)}">${esc(label)}</button>`).join("")}</div></article>`).join("")}</section>` : `<section class="practice-list"><div class="section-heading"><div><h2>Comprueba lo aprendido</h2><p class="subtle">Preguntas de práctica con explicación. Los casos de este banco son originales y no oficiales.</p></div></div>
           ${practiceQuestions.map((question, questionIndex) => {
@@ -289,7 +309,7 @@ function renderLesson(indicatorId) {
             </article>`;
           }).join("")}
         </section>`}
-        <div class="lesson-nav"><button class="secondary-button" data-section="${esc(section.id)}">← Volver a ${esc(section.title)}</button><div style="display:flex;gap:8px">${previous ? `<button class="secondary-button" data-indicator="${esc(previous.id)}">← Anterior</button>` : ""}${next ? `<button class="primary-button" data-indicator="${esc(next.id)}">Siguiente tema →</button>` : ""}</div></div>
+        <div class="lesson-nav"><button class="secondary-button" data-section="${esc(section.id)}">← Volver a ${esc(section.title)}</button><div style="display:flex;gap:8px">${previous ? `<button class="secondary-button" data-indicator="${esc(previous.id)}">← Anterior</button>` : ""}${next ? `<button class="primary-button" data-action="advance-indicator" data-current-indicator="${esc(indicator.id)}" data-indicator="${esc(next.id)}">Siguiente tema →</button>` : ""}</div></div>
       </div>
       <aside class="lesson-aside">
         <article class="aside-card"><div class="eyebrow">INDICADOR</div><h3 style="margin-top:8px">${esc(indicator.type)}</h3><p>Evalúa comprensión y aplicación práctica de este contenido.</p></article>
@@ -454,6 +474,7 @@ async function finishExam() {
         answeredAt: new Date().toISOString(),
       };
     }
+    autoCompleteIndicator(question.indicatorId);
   });
   await saveProgress();
   quiz = null;
@@ -493,6 +514,7 @@ async function answerPractice(card, selectedIndex) {
     correct: isCorrect,
     answeredAt: new Date().toISOString(),
   };
+  autoCompleteIndicator(indicator.id);
   await saveProgress();
   renderLesson(indicator.id);
   notify(isCorrect ? "¡Muy bien! Respuesta correcta." : "Respuesta registrada. Revisa la explicación.");
@@ -503,6 +525,7 @@ async function resetIndicatorPractice(indicatorId) {
   for (const key of Object.keys(progress.answers)) {
     if (key.startsWith(prefix)) delete progress.answers[key];
   }
+  progress.completedSections = progress.completedSections.filter((id) => id !== indicatorId);
   await saveProgress();
   renderLesson(indicatorId);
   notify("Preguntas listas para repetir.");
@@ -518,6 +541,17 @@ document.addEventListener("click", async (event) => {
   }
   if (button.dataset.action === "reset-indicator-practice") {
     await resetIndicatorPractice(button.dataset.indicator);
+    return;
+  }
+  if (button.dataset.action === "toggle-complete") { await toggleComplete(button.dataset.indicator); return; }
+  if (button.dataset.action === "advance-indicator") {
+    const currentIndicatorId = button.dataset.currentIndicator;
+    if (currentIndicatorId) {
+      autoCompleteIndicator(currentIndicatorId, true);
+      await saveProgress();
+      renderNavigation();
+    }
+    if (button.dataset.indicator) { renderLesson(button.dataset.indicator); return; }
     return;
   }
   if (button.dataset.view === "home") { goHome(); return; }
@@ -536,7 +570,6 @@ document.addEventListener("click", async (event) => {
     renderAllIndicators();
     return;
   }
-  if (button.dataset.action === "toggle-complete") { await toggleComplete(button.dataset.indicator); return; }
   if (button.dataset.practiceOption !== undefined) {
     const card = button.closest("[data-practice]");
     if (card) await answerPractice(card, Number(button.dataset.practiceOption));

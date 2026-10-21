@@ -140,6 +140,28 @@ test("la interfaz ofrece cambio de tema y cierre del menú lateral", () => {
   assert.match(css, /body\.theme-dark|--surface|--panel/);
 });
 
+test("la marca de tema estudiado no queda bloqueada por la navegación y se completa automáticamente", () => {
+  const script = fs.readFileSync(path.join(__dirname, "public", "app.js"), "utf8");
+  const toggleIndex = script.indexOf('if (button.dataset.action === "toggle-complete")');
+  const genericIndicatorIndex = script.indexOf('if (button.dataset.indicator) { renderLesson(button.dataset.indicator); return; }');
+  const advanceIndex = script.indexOf('if (button.dataset.action === "advance-indicator")');
+
+  assert.ok(toggleIndex !== -1, "Falta la acción de marcar como estudiado");
+  assert.ok(genericIndicatorIndex !== -1, "Falta la navegación por indicador");
+  assert.ok(advanceIndex !== -1, "Falta la acción de avanzar al siguiente tema");
+  assert.ok(toggleIndex < genericIndicatorIndex, "La acción de completar debe ejecutarse antes que la navegación genérica");
+  assert.ok(advanceIndex < genericIndicatorIndex, "La acción de avanzar debe registrar el tema antes de navegar");
+  assert.ok(script.includes("autoCompleteIndicator(currentIndicatorId, true)"), "El siguiente tema debe forzar el cierre del indicador actual");
+  assert.ok(script.includes("Object.keys(progress.answers)"), "Debe haber verificación automática de preguntas resueltas");
+});
+
+test("el reset de práctica borra tanto el avance como el estado completado del indicador", () => {
+  const script = fs.readFileSync(path.join(__dirname, "public", "app.js"), "utf8");
+
+  assert.ok(script.includes("progress.completedSections = progress.completedSections.filter((id) => id !== indicatorId);"), "Debe desmarcar el indicador al repetir sus preguntas");
+  assert.ok(script.includes("if (key.startsWith(prefix)) delete progress.answers[key];"), "Debe vaciar las respuestas del indicador actual");
+});
+
 test("el botón repetir preguntas se muestra para temas con práctica y ejecuta su reset antes de navegar", () => {
   const script = fs.readFileSync(path.join(__dirname, "public", "app.js"), "utf8");
   const resetActionIndex = script.indexOf('if (button.dataset.action === "reset-indicator-practice")');
