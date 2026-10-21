@@ -20,8 +20,13 @@ const esc = (value) => String(value).replace(/[&<>"']/g, (char) => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
 }[char]));
 const uniquePracticeKey = (question = {}) => {
-  const prompt = String(question.prompt || question.question || "").trim().toLowerCase();
-  return prompt || String(question.case || "").trim().toLowerCase();
+  const normalize = (value) => String(value || "").trim().toLocaleLowerCase("es").replace(/\s+/g, " ");
+  return JSON.stringify({
+    case: normalize(question.case || question.scenario),
+    prompt: normalize(question.prompt || question.question),
+    options: (question.options || []).map(normalize).sort(),
+    correctOption: normalize(question.options?.[question.answer]),
+  });
 };
 const uniqueQuestionsForIndicator = (indicator) => {
   if (!indicator || indicator.study?.reflections) return [];
