@@ -19,8 +19,22 @@ let examTimer;
 const esc = (value) => String(value).replace(/[&<>"']/g, (char) => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
 }[char]));
+const uniquePracticeKey = (question = {}) => {
+  const prompt = String(question.prompt || question.question || "").trim().toLowerCase();
+  return prompt || String(question.case || "").trim().toLowerCase();
+};
+const uniqueQuestionsForIndicator = (indicator) => {
+  if (!indicator || indicator.study?.reflections) return [];
+  const seen = new Set();
+  return [...indicator.questions, ...(indicator.study?.checks || [])].filter((question) => {
+    const key = uniquePracticeKey(question);
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+};
 const allQuestions = () => guide.indicators.flatMap((indicator) =>
-  (indicator.study?.reflections ? [] : [...indicator.questions, ...(indicator.study?.checks || [])])
+  (indicator.study?.reflections ? [] : uniqueQuestionsForIndicator(indicator))
     .map((question, index) => ({ ...question, indicatorId: indicator.id, index, indicatorTitle: indicator.title })),
 );
 const getIndicator = (id) => guide.indicators.find((indicator) => indicator.id === id);
@@ -32,11 +46,11 @@ const emptyProgress = () => ({ answers: {}, completedSections: [], updatedAt: nu
 const answeredCount = () => Object.keys(progress.answers).length;
 const correctCount = () => Object.values(progress.answers).filter((answer) => answer.correct).length;
 const practiceCount = (indicator) => indicator.study?.reflections?.length
-  ?? (indicator.questions.length + (indicator.study?.checks?.length || 0));
+  ?? uniqueQuestionsForIndicator(indicator).length;
 
 function indicatorPracticeKeys(indicator) {
   if (!indicator || indicator.study?.reflections) return [];
-  return [...indicator.questions, ...(indicator.study?.checks || [])].map((_, index) => questionKey(indicator.id, index));
+  return uniqueQuestionsForIndicator(indicator).map((_, index) => questionKey(indicator.id, index));
 }
 
 function autoCompleteIndicator(indicatorId, force = false) {
@@ -272,13 +286,12 @@ function renderLesson(indicatorId) {
   const indicator = getIndicator(indicatorId);
   if (!indicator) return;
   const completed = autoCompleteIndicator(indicatorId);
-  scrollToTop();
   const section = getSection(indicator.section);
   const ordered = guide.indicators.filter((item) => item.section === indicator.section);
   const index = ordered.findIndex((item) => item.id === indicatorId);
   const previous = ordered[index - 1];
   const next = ordered[index + 1];
-  const practiceQuestions = indicator.study?.reflections ? [] : [...indicator.questions, ...(indicator.study?.checks || [])];
+  const practiceQuestions = indicator.study?.reflections ? [] : uniqueQuestionsForIndicator(indicator);
   const answeredHere = Object.keys(progress.answers).filter((key) => key.startsWith(`${indicator.id}:`)).length;
   view = { name: "lesson", indicatorId };
   breadcrumb.textContent = indicator.title;
@@ -507,7 +520,7 @@ async function toggleComplete(indicatorId) {
 async function answerPractice(card, selectedIndex) {
   const indicator = getIndicator(card.dataset.practice);
   const questionIndex = Number(card.dataset.index);
-  const question = indicator.questions[questionIndex];
+  const question = uniqueQuestionsForIndicator(indicator)[questionIndex];
   const isCorrect = selectedIndex === question.answer;
   progress.answers[questionKey(indicator.id, questionIndex)] = {
     selected: question.options[selectedIndex],

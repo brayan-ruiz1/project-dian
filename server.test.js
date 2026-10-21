@@ -162,6 +162,14 @@ test("el reset de práctica borra tanto el avance como el estado completado del 
   assert.ok(script.includes("if (key.startsWith(prefix)) delete progress.answers[key];"), "Debe vaciar las respuestas del indicador actual");
 });
 
+test("el módulo 2 no repite preguntas por el mismo enunciado en la práctica del indicador", () => {
+  const script = fs.readFileSync(path.join(__dirname, "public", "app.js"), "utf8");
+
+  assert.ok(script.includes('const uniquePracticeKey = (question = {}) =>'), "Debe existir una clave única basada en el enunciado");
+  assert.ok(script.includes("const prompt = String(question.prompt || question.question || '')"), "La deduplicación debe basarse en el texto del enunciado");
+  assert.ok(script.includes("return prompt || String(question.case || '')"), "Debe conservar un fallback por caso cuando no haya enunciado");
+});
+
 test("el botón repetir preguntas se muestra para temas con práctica y ejecuta su reset antes de navegar", () => {
   const script = fs.readFileSync(path.join(__dirname, "public", "app.js"), "utf8");
   const resetActionIndex = script.indexOf('if (button.dataset.action === "reset-indicator-practice")');
