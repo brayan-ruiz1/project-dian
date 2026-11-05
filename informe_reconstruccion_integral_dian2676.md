@@ -14,8 +14,8 @@ Se revisó y ajustó la guía activa `data/guide.json`, que se sirve en la app; 
 ## Controles editoriales aplicados
 
 - Se verificaron los 167 ítems funcionales de los 36 módulos de conocimientos y aptitud: no hay casos ni enunciados idénticos entre ellos.
-- Se reescribieron 38 enunciados genéricos que se repetían, añadiendo el contexto del módulo. También se reformuló la alternativa distractora duplicada entre sanciones y fiscalización aduanera, con su explicación, sin cambiar la clave correcta.
-- Auditoría final: cero casos repetidos, cero enunciados repetidos, cero textos de respuesta repetidos y cero claves correctas repetidas en los 167 ítems funcionales. Se comprobó que la copia estática coincide byte a byte con la guía activa. Las respuestas de los módulos de integridad y competencias siguen usando la escala común de autorreporte Likert, como corresponde a ese formato.
+- Se hicieron específicos los 38 enunciados genéricos que se repetían, añadiendo el contexto del módulo.
+- Se eliminaron el prefijo artificial “Ante «…»” y las explicaciones automáticas; se reescribieron distractores repetidos con errores plausibles ligados a cada situación y se corrigieron desajustes puntuales entre caso, enunciado y respuesta. Auditoría final de 167 preguntas en 36 módulos: cero casos, enunciados u opciones de respuesta idénticos en el banco funcional; cero claves correctas repetidas; tres opciones válidas por pregunta. La copia estática coincide byte a byte con la guía activa. Las afirmaciones de integridad y competencias conservan su escala común de autorreporte Likert.
 - Las afirmaciones Likert no conservan clave ni explicación de acierto/error, porque son ítems de autorreporte.
 
 ## Criterio y alcance
