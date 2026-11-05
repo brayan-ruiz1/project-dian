@@ -1,4 +1,4 @@
-const app = document.querySelector("#app");
+﻿const app = document.querySelector("#app");
 const sectionNav = document.querySelector("#section-nav");
 const breadcrumb = document.querySelector("#breadcrumb-current");
 const saveStatus = document.querySelector("#save-status");
@@ -323,7 +323,7 @@ function renderLesson(indicatorId) {
               ${question.case ? `<p class="question-case">${esc(question.case)}</p>` : ""}
               <p class="question-prompt">${esc(question.prompt)}</p>
               <div class="options">${question.options.map((option, optionIndex) => `<button class="option ${selected === optionIndex ? (optionIndex === question.answer ? "correct" : "incorrect") : ""} ${saved && optionIndex === question.answer ? "correct" : ""}" data-practice-option="${optionIndex}" ${saved ? "disabled" : ""}><span class="option-letter">${"ABCD"[optionIndex]}</span><span>${esc(option)}</span></button>`).join("")}</div>
-              ${saved ? `<div class="feedback ${saved.correct ? "good" : "bad"}"><span>${saved.correct ? "✓" : "↗"}</span><span><strong>${saved.correct ? "¡Correcto!" : "Repasa este punto"}</strong>${esc(question.why)}</span></div>` : ""}
+              ${saved ? `<div class="feedback ${saved.correct ? "good" : "bad"}"><span>${saved.correct ? "✓" : "↗"}</span><span><strong>${saved.correct ? "¡Correcto!" : "Repasa este punto"}</strong>${question.why && question.why !== question.options[question.answer] ? esc(question.why) : ""}</span></div>` : ""}
             </article>`;
           }).join("")}
         </section>`}
@@ -506,7 +506,7 @@ async function finishExam() {
     <div class="result-list">${finished.questions.map((question, index) => {
       const selected = finished.answers[index];
       const isCorrect = selected === question.answer;
-      return `<article class="result-item"><strong><span style="color:${isCorrect ? "#27815c" : "#bd6660"}">${isCorrect ? "✓ Correcta" : selected === undefined ? "— Sin responder" : "↗ Para repasar"}</span> · ${esc(question.indicatorTitle)}</strong><p>${esc(question.prompt)}</p><p><strong>Respuesta:</strong> ${esc(question.options[question.answer])}<br>${esc(question.why)}</p></article>`;
+      return `<article class="result-item"><strong><span style="color:${isCorrect ? "#27815c" : "#bd6660"}">${isCorrect ? "✓ Correcta" : selected === undefined ? "— Sin responder" : "↗ Para repasar"}</span> · ${esc(question.indicatorTitle)}</strong><p>${esc(question.prompt)}</p><p><strong>Respuesta:</strong> ${esc(question.options[question.answer])}${question.why && question.why !== question.options[question.answer] ? `<br>${esc(question.why)}` : ""}</p></article>`;
     }).join("")}</div>`;
   renderNavigation();
 }
