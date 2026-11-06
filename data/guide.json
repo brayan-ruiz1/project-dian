@@ -1507,7 +1507,7 @@
           "case": "Una persona recibió un ingreso extraordinario, pero el expediente aún no identifica su naturaleza, periodo ni si la ley lo grava.",
           "prompt": "¿Qué hecho debe establecerse para determinar si existe obligación sustancial?",
           "options": [
-            "La obligación sustancial nace cuando se realiza el hecho generador previsto en la ley y recae en el sujeto pasivo definido por ella.",
+            "Determinar si el ingreso corresponde a un hecho gravado para esa persona y ese periodo.",
             "Ubicar el ingreso bajo la actividad principal del RUT y liquidar el impuesto con la tarifa asociada a esa actividad.",
             "Tomar el reporte bancario como hecho generador y calcular sobre el valor bruto sin precisar la naturaleza del ingreso."
           ],
@@ -1549,9 +1549,9 @@
           "case": "En una revisión de cumplimiento, el sistema no encuentra declaración de renta para una persona durante un periodo. El RUT muestra cambios de responsabilidad a mitad de año y los datos de terceros no permiten precisar la naturaleza de algunos ingresos. Un analista propone calcular de inmediato una sanción. ¿Qué debe verificar primero el servidor?",
           "prompt": "¿Qué comprobación permite determinar si la ausencia de declaración configura un incumplimiento?",
           "options": [
-            "Confirmar la calidad del sujeto, las condiciones legales del periodo y los datos disponibles antes de concluir o proponer una consecuencia.",
-            "Usar la responsabilidad que aparece hoy en el RUT para todo el periodo, aunque el registro haya cambiado durante el año.",
-            "Inferir el deber de declarar a partir del dato de terceros, antes de establecer a qué periodo y concepto corresponde."
+            "Revisar la calidad del sujeto y sus responsabilidades durante el periodo, y contrastar los ingresos antes de concluir.",
+            "Tomar la responsabilidad vigente al hacer la revisión como aplicable a todo el periodo y calcular con esa condición.",
+            "Usar el reporte de terceros para inferir el deber y revisar después a qué periodo y concepto corresponde."
           ],
           "answer": 0,
           "why": "La obligación de declarar depende de los supuestos legales aplicables al sujeto y al periodo; la falta del formulario por sí sola no demuestra que existía ese deber.",
@@ -1592,9 +1592,9 @@
           "case": "Dos personas de la misma actividad presentan ingresos similares, pero figuran con responsabilidades y periodos distintos en el RUT.",
           "prompt": "¿Qué debe revisarse antes de atribuirles el mismo deber formal?",
           "options": [
-            "Extender a ambas personas el deber formal de mayor carga por compartir actividad económica.",
-            "Tomar la similitud de ingresos como indicador suficiente y tratar las diferencias registrales como irrelevantes.",
-            "No todos los deberes aplican a todos los contribuyentes: se verifica calidad, responsabilidad, régimen, actividad, operación y periodo."
+            "Atribuirles los mismos deberes por su nivel de ingreso y actividad, salvo que una de ellas demuestre una diferencia.",
+            "Usar la responsabilidad actual del RUT para ambos periodos y revisar la diferencia solo si cambia el resultado.",
+            "Comparar su calidad, responsabilidades y operaciones en cada periodo; la actividad y los ingresos similares no bastan."
           ],
           "answer": 2,
           "why": "No todos los deberes aplican a todos los contribuyentes: se verifica calidad, responsabilidad, régimen, actividad, operación y periodo.",
@@ -1754,9 +1754,9 @@
           "case": "Una hoja de cálculo mezcla ingresos de dos años y conceptos de renta e IVA, sin indicar a qué periodo corresponde cada dato.",
           "prompt": "¿Qué debe precisarse antes de determinar una base gravable?",
           "options": [
-            "Primero se identifica el impuesto y el periodo; después, el sujeto y los hechos económicos que realizan el hecho generador.",
-            "Consolidar los ingresos en el periodo más reciente y usar una sola base para renta e IVA.",
-            "Aplicar a todos los conceptos la base de renta porque la hoja presenta las cifras en una misma columna."
+            "Separar por impuesto y periodo, identificar al sujeto y asociar cada ingreso con el hecho que lo origina.",
+            "Consolidar los ingresos en el periodo más reciente y aplicar la base de cada impuesto sobre esa suma.",
+            "Organizar primero las cifras por impuesto, pero asignar los conceptos al año de su registro contable."
           ],
           "answer": 0,
           "why": "Primero se identifica el impuesto y el periodo; después, el sujeto y los hechos económicos que realizan el hecho generador.",
@@ -1838,9 +1838,9 @@
           "case": "En renta se acreditan ingresos realizados por 120 millones, devoluciones por 5 millones, costos imputables por 40 millones y deducciones procedentes por 10 millones, sin otros ajustes.",
           "prompt": "¿Qué secuencia general debe aplicarse para determinar la renta líquida?",
           "options": [
-            "Restar costos y deducciones del ingreso sin depurar primero devoluciones, rebajas y descuentos.",
-            "Incluir el valor contable de cualquier gasto como deducción, aunque no cumpla los requisitos fiscales.",
-            "Depurar ingresos realizados con devoluciones, rebajas, costos y deducciones procedentes, aplicando los límites legales."
+            "Restar los costos imputables y las deducciones soportadas al ingreso, y tratar las devoluciones por separado.",
+            "Partir de los ingresos contables y llevar a la depuración los costos y gastos registrados en el periodo.",
+            "Depurar ingresos con devoluciones, costos y deducciones procedentes, aplicando los límites correspondientes."
           ],
           "answer": 2,
           "why": "La renta líquida resulta de esa depuración, sujeta a los requisitos y límites tributarios.",
@@ -2348,7 +2348,7 @@
           "options": [
             "Aplicar al trámite sancionatorio la fecha de la operación y usarla también para determinar el procedimiento aplicable.",
             "Elegir el régimen vigente al comenzar la actuación y extenderlo sin distinción a los aspectos sustantivos.",
-            "Decreto 1165 regula obligaciones aduaneras; Ley 2586 establece el régimen sancionatorio y sus reglas de transición."
+            "Separar las reglas de la operación de las sanciones y definir la vigencia aplicable a cada aspecto."
           ],
           "answer": 2,
           "why": "Debe distinguirse el régimen sustancial de las operaciones aduaneras del sancionatorio vigente y aplicar la transición según las fechas del caso.",
@@ -2762,9 +2762,9 @@
           "case": "Una muestra no probabilística de expedientes arroja errores, pero no se documentaron criterios de selección ni tamaño de la población.",
           "prompt": "¿Qué alcance puede atribuirse válidamente al resultado?",
           "options": [
-            "Calcular una tasa de error y proyectarla a toda la población, aunque la selección no permita inferencia estadística.",
-            "El muestreo y las pruebas de controles/sustantivas responden a riesgos y no permiten generalizaciones que excedan el diseño o la evidencia.",
-            "Presentar los hallazgos de la muestra como hechos aislados y excluirlos del informe por no ser probabilística."
+            "Estimar una tasa de error para la población con los resultados y advertir que la selección fue no probabilística.",
+            "Describir los errores observados y limitar la conclusión a los expedientes revisados y al diseño aplicado.",
+            "Excluir del informe los errores detectados porque una muestra no probabilística no permite conclusiones útiles."
           ],
           "answer": 1,
           "why": "El muestreo y las pruebas de controles/sustantivas responden a riesgos y no permiten generalizaciones que excedan el diseño o la evidencia.",
@@ -2963,9 +2963,9 @@
           "case": "En el análisis de clientes, una operación de monto alto coincide con la actividad económica declarada y tiene soportes coherentes. Otro cliente realiza varias operaciones menores, pero frecuentes, con contrapartes y destinos que no parecen compatibles con su perfil. El equipo debe priorizar una revisión sin prejuzgar responsabilidad. ¿Qué debería considerar?",
           "prompt": "¿Qué criterio permite valorar si la segunda operación requiere análisis adicional?",
           "options": [
-            "Ordenar la revisión por monto y tratar las operaciones pequeñas como de baja prioridad aunque sean frecuentes y atípicas.",
-            "Contrastar perfil, frecuencia, contrapartes, contexto y explicación, y documentar si corresponde escalar el análisis por los canales aplicables.",
-            "Usar un umbral fijo como criterio de cierre cuando las contrapartes y los destinos no concuerdan con el perfil."
+            "Priorizar la operación de mayor monto y aplicar el mismo umbral a los movimientos recurrentes de menor valor.",
+            "Contrastar frecuencia, contrapartes, propósito y perfil; documentar si el caso requiere análisis adicional.",
+            "Cerrar la revisión cuando cada movimiento esté bajo el umbral, aunque el patrón acumulado difiera del perfil."
           ],
           "answer": 1,
           "why": "La sospecha no depende de un monto aislado; se valora la operación frente al perfil y al contexto y se documenta la decisión.",
@@ -3062,7 +3062,7 @@
           "case": "El área jurídica recibe un ROS y propone citarlo como prueba concluyente de que el cliente cometió un delito.",
           "prompt": "¿Qué alcance tiene ese reporte?",
           "options": [
-            "Un ROS es un reporte de inteligencia financiera; no es denuncia, testimonio, prueba judicial ni declaración de responsabilidad penal.",
+            "Usar el ROS como elemento de análisis que orienta verificaciones, sin tratarlo como prueba concluyente del delito.",
             "Usar el ROS como indicio concluyente y trasladar al cliente la carga de desvirtuar la responsabilidad penal.",
             "Citar el reporte en el acto como prueba de la conducta, sin obtener elementos independientes sobre los hechos."
           ],
@@ -3229,7 +3229,7 @@
           "prompt": "¿Cómo se distinguen las funciones del Banco de la República y de la DIAN?",
           "options": [
             "Asignar a la DIAN la expedición de reglas generales y al Banco de la República la sanción de cada incumplimiento.",
-            "El Banco de la República regula; la DIAN controla y sanciona en los ámbitos que la ley le asigna.",
+            "El Banco establece reglas cambiarias y la DIAN ejerce control dentro de las funciones que tiene asignadas.",
             "Tomar el control que ejerce la DIAN como prueba de que también regula el mercado cambiario."
           ],
           "answer": 1,
@@ -3618,9 +3618,9 @@
           "case": "Las premisas establecen que todos los casos del grupo A tienen revisión documental y que el expediente X pertenece al grupo A.",
           "prompt": "¿Qué conclusión se sigue necesariamente de esas premisas?",
           "options": [
-            "Inferir que todo expediente del grupo A fue revisado a partir de la afirmación sobre algunos casos.",
-            "En inferencias, una conclusión debe seguir necesariamente de las premisas; que sea probable no la convierte en válida.",
-            "Concluir que X no tiene revisión porque la premisa no describe individualmente su expediente."
+            "Concluir que X pertenece al grupo A porque tuvo revisión documental, aunque no se haya establecido esa pertenencia.",
+            "Deducir que X tuvo revisión documental porque pertenece a A y todos los casos de A tienen esa revisión.",
+            "Dejar indeterminado el caso X porque las premisas no mencionan su expediente por separado."
           ],
           "answer": 1,
           "why": "En inferencias, una conclusión debe seguir necesariamente de las premisas; que sea probable no la convierte en válida.",
@@ -3887,10 +3887,10 @@
           "case": "Un nuevo procedimiento choca en la práctica con un requisito legal.",
           "prompt": "¿Cómo debe resolver la tensión entre el nuevo procedimiento y el requisito legal?",
           "options": [
-            "Mantiene el procedimiento vigente y comunica la incompatibilidad cuando un caso concreto la haga evidente.",
-            "Analiza el impacto legal y operativo, consulta a la instancia responsable y propone una transición que controle los riesgos.",
-            "Suspende de inmediato todo el procedimiento hasta que se expida una nueva instrucción para cada caso.",
-            "Aplica el procedimiento nuevo en tareas de bajo riesgo y deja la revisión legal para el cierre del piloto."
+            "Mantener las etapas compatibles, detener el paso afectado y consultar cómo aplicar el requisito mientras se ajusta el flujo.",
+            "Precisar el impacto, consultar al responsable jurídico y proponer un ajuste transitorio que mantenga el requisito legal.",
+            "Detener todas las actividades del procedimiento hasta recibir una instrucción particular para cada expediente.",
+            "Continuar con los casos de bajo impacto y someter la compatibilidad normativa a revisión al terminar el piloto."
           ],
           "answer": 1,
           "why": "Analiza el impacto legal y operativo, consulta a la instancia responsable y propone una transición que controle los riesgos.",
@@ -5157,10 +5157,10 @@
           "case": "Un usuario recibe una respuesta técnica que no comprende.",
           "prompt": "¿Cómo hacer comprensible la respuesta técnica sin cambiar su alcance?",
           "options": [
-            "Repite la respuesta técnica con más detalle y deja al usuario la opción de solicitar aclaración.",
-            "Remite el acto completo y señala qué artículo contiene la respuesta a su solicitud.",
-            "Ofrece una orientación general y no distingue si el documento ya constituye decisión de fondo.",
-            "Aclara la respuesta en lenguaje comprensible, conserva el sentido técnico y explica si es orientación o decisión."
+            "Mantener el término técnico y añadir una definición breve junto a la conclusión concreta para el usuario.",
+            "Enviar la decisión completa y señalar el apartado donde se responde, sin resumir el efecto práctico.",
+            "Explicar el trámite en lenguaje sencillo e indicar si se requiere otra actuación para resolver la solicitud.",
+            "Explicar el resultado con lenguaje claro, conservar su alcance y precisar si es orientación o decisión."
           ],
           "answer": 3,
           "why": "Aclara la respuesta en lenguaje comprensible, conserva el sentido técnico y explica si es orientación o decisión.",
@@ -5204,10 +5204,10 @@
           "case": "Un adulto mayor no sabe cómo hacer un trámite digital.",
           "prompt": "¿Qué apoyo puede ofrecer al adulto mayor sin alterar los requisitos?",
           "options": [
-            "Completa el formulario en nombre del usuario y presenta el trámite con los datos disponibles.",
-            "Le pide regresar con un familiar que pueda ayudarle a usar el canal digital.",
-            "Explica las alternativas accesibles, acompaña el diligenciamiento necesario y mantiene el mismo requisito legal.",
-            "Entrega instrucciones impresas y mantiene el canal digital como única forma de radicación."
+            "Acompañar el uso del canal y completar los campos que el usuario dicte, verificando con él los datos antes del envío.",
+            "Explicarle el paso a paso y ofrecer atención presencial si está disponible para ese trámite.",
+            "Presentar las alternativas de atención, ayudarle a diligenciar y conservar los requisitos aplicables.",
+            "Entregar instrucciones impresas y permitir que el usuario vuelva a intentarlo por el canal digital."
           ],
           "answer": 2,
           "why": "Explica las alternativas accesibles, acompaña el diligenciamiento necesario y mantiene el mismo requisito legal.",
@@ -5651,10 +5651,10 @@
           "case": "Un compañero pregunta por qué cumple procedimientos que nadie revisa.",
           "prompt": "¿Cómo explicar el valor de seguir el procedimiento aunque no haya revisión?",
           "options": [
-            "Sugiere eliminar los pasos que no se revisan y pide al equipo que documente solo las excepciones.",
-            "Mantiene el procedimiento mientras su jefe lo solicite y evita discutirlo con el equipo.",
-            "Sigue el procedimiento, explica su función para el servicio y propone revisar los pasos por la vía institucional.",
-            "Omite controles que parecen redundantes y conserva solo los que se verifican de manera periódica."
+            "Revisar con el equipo qué pasos podrían simplificarse y elevar una propuesta antes de modificar los controles vigentes.",
+            "Cumplir el procedimiento vigente y plantear la inquietud a la jefatura en la revisión de resultados del área.",
+            "Cumplir los pasos vigentes y explicar su finalidad, proponiendo cambios mediante el conducto establecido.",
+            "Aplicar los controles que afectan el resultado y proponer una revisión formal de los pasos restantes."
           ],
           "answer": 2,
           "why": "El procedimiento mantiene continuidad y trazabilidad; cualquier mejora debe tramitarse por la vía establecida.",
@@ -5681,10 +5681,10 @@
           "case": "Se acerca un cierre con alta carga y su tarea no es la más visible.",
           "prompt": "¿Qué priorizar cuando se aproxima el cierre y el trabajo es poco visible?",
           "options": [
-            "Prioriza su tarea según el plazo y comunica al equipo si otro entregable esencial quedará expuesto.",
-            "Escoge el trabajo más visible para que la contribución sea reconocida antes del cierre.",
-            "Acepta más carga para mostrar compromiso y ajusta el resto de las tareas al final de la semana.",
-            "Mantiene la calidad del entregable, coordina apoyos y cuida la continuidad del servicio aunque su aporte sea poco visible."
+            "Acordar prioridades con el equipo según plazo e impacto, y advertir qué entregables necesitan apoyo para llegar a tiempo.",
+            "Asumir primero la entrega con mayor visibilidad y reorganizar el trabajo pendiente después del cierre.",
+            "Ofrecer apoyo en las tareas atrasadas y revisar al final qué partes de su propio entregable pueden simplificarse.",
+            "Conservar la calidad y coordinar apoyos para que el servicio continúe, aunque su aporte sea poco visible."
           ],
           "answer": 3,
           "why": "Mantiene la calidad del entregable, coordina apoyos y cuida la continuidad del servicio aunque su aporte sea poco visible.",
@@ -5883,10 +5883,10 @@
           "case": "Necesita imprimir un borrador interno.",
           "prompt": "¿Cómo preparar la copia física de un borrador interno con cuidado?",
           "options": [
-            "Imprime solo las páginas necesarias, verifica la versión del borrador y usa doble cara si requiere copia física.",
-            "Imprime el documento completo para facilitar la revisión, aunque exista versión digital vigente.",
-            "Solicita varias copias de trabajo para que cada integrante revise el borrador por separado.",
-            "Usa una copia anterior con anotaciones para evitar imprimir de nuevo el archivo actualizado."
+            "Verificar la versión, imprimir las páginas necesarias y usar doble cara si el formato facilita la revisión.",
+            "Imprimir el documento completo con anexos para que todas las personas revisen la misma copia física.",
+            "Preparar copias de las secciones asignadas a cada revisor y conservar un ejemplar de referencia del borrador.",
+            "Usar la copia anotada disponible y cotejar los cambios con el archivo digital antes de circularla."
           ],
           "answer": 0,
           "why": "Imprime solo las páginas necesarias, verifica la versión del borrador y usa doble cara si requiere copia física.",
@@ -6563,8 +6563,8 @@
           "case": "Una dependencia pretende actuar sin una norma o acto que le atribuya esa función, alegando que la medida sería eficiente.",
           "prompt": "¿Qué límite constitucional debe revisar primero?",
           "options": [
-            "Invocar eficacia y necesidad pública como fuente de competencia cuando la ley no asigna la función.",
-            "La autoridad solo puede ejercer competencias atribuidas por la Constitución o la ley.",
+            "Apoyarse en la finalidad pública de la entidad para asumir una función relacionada con su misión.",
+            "Verificar que una norma vigente haya asignado esa función a la autoridad que pretende ejercerla.",
             "Suponer que la competencia acompaña a la jerarquía del cargo aunque no haya atribución expresa."
           ],
           "answer": 1,
@@ -6690,7 +6690,7 @@
           "prompt": "¿Qué principios del artículo 209 deben orientar la gestión administrativa?",
           "options": [
             "Aplicar el mismo trámite de forma mecánica a todos los usuarios, sin valorar las diferencias relevantes del caso.",
-            "Art. 209: la función administrativa sirve al interés general y sigue igualdad, moralidad, eficacia, economía, celeridad, imparcialidad y publicidad.",
+            "Organizar el servicio para atender el interés general con igualdad, imparcialidad, transparencia y uso responsable de recursos.",
             "Acelerar la atención de solicitudes frecuentes reduciendo controles que también protegen a usuarios en igual situación."
           ],
           "answer": 1,
@@ -6850,9 +6850,9 @@
           "case": "Una importación tiene declaración aduanera, tributos pagados y transferencia internacional al proveedor.",
           "prompt": "¿Cómo deben analizarse sus consecuencias tributarias, aduaneras y cambiarias?",
           "options": [
-            "Unificar en un solo cálculo el tributo de importación, el pago al proveedor y el efecto interno de la operación.",
-            "Considerar que el pago de derechos aduaneros extingue también los deberes cambiarios relacionados.",
-            "Una importación puede causar tributos aduaneros, deberes cambiarios de pago y efectos tributarios internos, analizados por separado."
+            "Revisar en conjunto el costo de importación y el pago al proveedor, usando el mismo valor para los tres análisis.",
+            "Tomar el pago aduanero como soporte principal y comprobar si cubre las obligaciones vinculadas al giro.",
+            "Analizar por separado el efecto aduanero, la operación de pago y sus consecuencias tributarias internas."
           ],
           "answer": 2,
           "why": "Una misma operación puede activar regímenes distintos; cada consecuencia se determina con sus propias reglas.",
@@ -6906,7 +6906,7 @@
           "case": "Un pago por importación se cursa desde una cuenta en el exterior y el contribuyente pregunta quién regula el régimen y quién controla la operación.",
           "prompt": "¿Qué distinción institucional debe aplicar?",
           "options": [
-            "El Banco regula el régimen cambiario; la DIAN controla en las materias que la ley le asigna.",
+            "El Banco establece reglas cambiarias y la DIAN controla las operaciones dentro de su competencia.",
             "Atribuir al Banco de la República la fiscalización de declaraciones tributarias por su papel regulador.",
             "Tratar el control de la DIAN como potestad para dictar por sí sola las reglas generales de cambio."
           ],
@@ -6962,9 +6962,9 @@
           "case": "Una mercancía ingresa al territorio nacional y permanece bajo un régimen de importación antes de su levante.",
           "prompt": "¿Qué aspecto corresponde al análisis aduanero?",
           "options": [
-            "Usar las reglas del IVA interno para definir el régimen de ingreso y levante de una mercancía importada.",
-            "El análisis aduanero cubre ingreso, permanencia, circulación y salida de mercancías, regímenes, declaraciones y control.",
-            "Clasificar la permanencia en un régimen aduanero como operación de cambio por el pago que pueda generar."
+            "Revisar la declaración y el pago de tributos internos para determinar cuándo procede el levante aduanero.",
+            "Examinar el ingreso, la permanencia bajo el régimen, la circulación y la salida de la mercancía.",
+            "Priorizar el pago al proveedor y la canalización de divisas para definir el régimen de permanencia."
           ],
           "answer": 1,
           "why": "El análisis aduanero cubre ingreso, permanencia, circulación y salida de mercancías, regímenes, declaraciones y control.",
@@ -7319,7 +7319,7 @@
           "options": [
             "Tomar el total informado por terceros y aplicarle la tarifa sin separar sujeto, concepto ni periodo.",
             "Usar el saldo de la declaración como base del ajuste, aunque no se haya identificado el hecho generador.",
-            "La determinación identifica sujeto, hecho generador, periodo, base, tarifa y saldo bajo la ley aplicable."
+            "Precisar quién realizó la operación, qué impuesto corresponde y a qué periodo antes de calcular el saldo."
           ],
           "answer": 2,
           "why": "La determinación identifica sujeto, hecho generador, periodo, base, tarifa y saldo bajo la ley aplicable.",
@@ -7805,8 +7805,8 @@
           "case": "El equipo revisa una importación sometida al Decreto 1165 de 2019 y debe distinguir las reglas de operación de las reglas del procedimiento sancionatorio aduanero vigente.",
           "prompt": "¿Qué marco debe usar para ubicar las obligaciones y el régimen sancionatorio?",
           "options": [
-            "Aplicar las reglas de operación del Decreto 1165 para definir sin más el procedimiento sancionatorio posterior.",
-            "El Decreto 1165 de 2019 contiene el régimen sustancial aduanero y ha sido modificado; consulte texto vigente y reglas de transición.",
+            "Usar las reglas de la operación como única referencia para escoger el trámite sancionatorio posterior.",
+            "Distinguir los deberes de la operación de las reglas sancionatorias y verificar la vigencia para las fechas del caso.",
             "Usar la fecha de inicio del trámite como fecha única para todas las obligaciones de la importación."
           ],
           "answer": 1,
@@ -8170,9 +8170,9 @@
           "case": "Una operación inusual reduce la carga tributaria, pero tiene razones comerciales documentadas y no se han analizado sus efectos.",
           "prompt": "¿Qué exige un análisis de abuso tributario?",
           "options": [
-            "Descartar el análisis antiabuso porque existen contratos, sin contrastar la sustancia y el efecto de la estructura.",
-            "Calificar como abuso cualquier ahorro fiscal, aun cuando falte el supuesto legal que habilita la regla.",
-            "El abuso tributario se analiza con reglas antiabuso y hechos, propósito, forma, sustancia y efectos; no basta una operación inusual."
+            "Tomar los contratos y la explicación comercial como suficientes para cerrar el análisis de la estructura.",
+            "Comparar el ahorro fiscal con el de otras operaciones y tratar la diferencia como indicio decisivo de abuso.",
+            "Contrastar los hechos y el efecto fiscal con la regla aplicable; una operación inusual por sí sola no prueba abuso."
           ],
           "answer": 2,
           "why": "El abuso tributario se analiza con reglas antiabuso y hechos, propósito, forma, sustancia y efectos; no basta una operación inusual.",
@@ -8318,9 +8318,9 @@
           "case": "Una entidad recibe una solicitud de acceso a un informe que no contiene datos sometidos a reserva por ley.",
           "prompt": "¿Qué regla general aplica al acceso a información pública?",
           "options": [
-            "Reservar el informe por su uso interno, aunque no se configure una excepción prevista en la ley.",
-            "Solicitar que la persona explique su interés particular antes de aplicar la presunción de publicidad.",
-            "La Ley 1712 de 2014 presume pública la información bajo control de sujetos obligados, salvo excepción legal."
+            "Clasificar el informe como público tras verificar su contenido y entregar la versión que corresponda al solicitante.",
+            "Solicitar el propósito de la consulta y definir el acceso con base en el uso que la persona declara.",
+            "Entregar el informe solicitado después de verificar si contiene información protegida por una excepción legal."
           ],
           "answer": 2,
           "why": "La Ley 1712 de 2014 presume pública la información bajo control de sujetos obligados, salvo excepción legal.",
@@ -9097,8 +9097,8 @@
           "case": "La DIAN analiza una determinación tributaria para la cual el Estatuto Tributario prevé etapas y términos especiales.",
           "prompt": "¿Qué reglas deben aplicarse al procedimiento?",
           "options": [
-            "Aplicar el término general del CPACA mientras no exista una exclusión expresa, aunque una norma especial fije una etapa distinta.",
-            "El CPACA contiene reglas generales; los procedimientos tributarios y aduaneros pueden tener normas especiales que prevalecen en su ámbito.",
+            "Aplicar el procedimiento general mientras la regla especial no excluya expresamente cada una de sus etapas.",
+            "Identificar primero si el trámite tiene una regla especial y aplicar el procedimiento general en los aspectos que esta no regule.",
             "Dar prevalencia al trámite general por considerar que las reglas especiales solo afectan los recursos, no la actuación inicial."
           ],
           "answer": 1,
@@ -9195,9 +9195,9 @@
           "case": "En una actuación, un informe técnico será usado como prueba, pero el interesado no ha podido conocerlo ni controvertirlo.",
           "prompt": "¿Qué garantías deben observarse?",
           "options": [
-            "La práctica de pruebas debe ser pertinente y permitir contradicción; la notificación y los recursos siguen la norma específica.",
-            "Incorporar el informe al expediente y usarlo en la decisión, permitiendo su contradicción solo en el recurso.",
-            "Dar por suficiente la notificación del acto final para garantizar acceso previo a la prueba técnica."
+            "Poner el informe a disposición antes de decidir y conceder oportunidad efectiva para controvertir su contenido.",
+            "Incorporar el informe al expediente, comunicar que fue valorado y permitir observaciones durante el recurso.",
+            "Informar la conclusión técnica en la decisión y dar acceso al informe si el interesado lo solicita después."
           ],
           "answer": 0,
           "why": "La práctica de pruebas debe ser pertinente y permitir contradicción; la notificación y los recursos siguen la norma específica.",
@@ -9245,7 +9245,7 @@
           "prompt": "¿Qué principios deben guiar el procedimiento administrativo?",
           "options": [
             "Priorizar la celeridad y simplificar la participación aunque los interesados no conozcan las actuaciones relevantes.",
-            "El artículo 3 del CPACA recoge principios como debido proceso, igualdad, imparcialidad, buena fe, participación, publicidad, eficacia y celeridad.",
+            "Dar oportunidad de participación y una respuesta oportuna, imparcial y comprensible durante la actuación.",
             "Aplicar igualdad como trato idéntico, aun cuando las circunstancias justifiquen una participación diferenciada."
           ],
           "answer": 1,
@@ -9357,7 +9357,7 @@
           "case": "Una persona pide copia de un acto y presenta además una queja sobre la atención. La comunicación llega a una dependencia de la DIAN.",
           "prompt": "¿Qué debe identificarse para asignar trámite, competencia y término de respuesta?",
           "options": [
-            "La Ley 1755 de 2015 regula el derecho de petición; se debe identificar modalidad, autoridad competente, contenido y término legal aplicable.",
+            "Separar la solicitud de copia de la queja, identificar quién resuelve cada asunto y aplicar el término correspondiente.",
             "Registrar toda la comunicación como queja y responderla con un término único, sin separar la solicitud de copia.",
             "Trasladar solo la queja y exigir otra radicación para atender la petición documental incluida."
           ],
@@ -9710,9 +9710,9 @@
           "case": "Durante un estado de excepción, una autoridad sostiene que puede suspender libertades fundamentales por razones de orden público.",
           "prompt": "¿Qué límite constitucional aplica?",
           "options": [
-            "El artículo 214 mantiene las garantías fundamentales, aunque permite suspender temporalmente libertades no esenciales.",
+            "El régimen excepcional permite restricciones bajo condiciones constitucionales, pero conserva las garantías fundamentales.",
             "La autoridad puede restringir derechos según el decreto y someter la medida a control constitucional posterior.",
-            "El artículo 214 impide suspender derechos humanos y libertades fundamentales, incluso durante un estado de excepción."
+            "La autoridad puede adoptar medidas excepcionales, pero no suspender los derechos humanos ni las libertades fundamentales."
           ],
           "answer": 2,
           "why": "El artículo 214 prohíbe suspender derechos humanos y libertades fundamentales durante los estados de excepción.",
@@ -9752,9 +9752,9 @@
           "case": "Una entidad prepara un proyecto normativo que desarrolla el alcance de varios derechos fundamentales y debe definir el trámite constitucional exigible.",
           "prompt": "¿Qué requisito constitucional debe verificar antes de tramitar la regulación?",
           "options": [
-            "La regulación de derechos fundamentales exige ley estatutaria y control previo de constitucionalidad.",
+            "Si desarrolla derechos fundamentales, tramitarla como ley estatutaria y someterla a control previo.",
             "Puede tramitarse como ley ordinaria si el proyecto desarrolla garantías que ya aparecen en la Constitución.",
-            "Se requiere ley estatutaria, pero el control constitucional puede hacerse después de promulgada la norma."
+            "Tramitarla como ley estatutaria y revisar su constitucionalidad después de la promulgación."
           ],
           "answer": 0,
           "why": "El artículo 152 reserva estas materias a ley estatutaria, sujeta a control previo de constitucionalidad.",
@@ -9795,8 +9795,8 @@
           "prompt": "¿Cómo debe valorarse un tratado ratificado de derechos humanos al interpretar la garantía invocada?",
           "options": [
             "Aplicar el tratado solo cuando una ley interna incorpore literalmente la garantía invocada.",
-            "Los tratados ratificados de DD. HH. integran el bloque (art. 93); ciertos derechos son de aplicación inmediata (art. 85).",
-            "Extender la aplicación inmediata a toda disposición convencional, aunque requiera desarrollo legal."
+            "Interpretar el tratado solo como antecedente y exigir una ley interna que desarrolle literalmente cada garantía.",
+            "Aplicar directamente toda disposición del tratado, sin valorar si la cláusula requiere desarrollo interno."
           ],
           "answer": 1,
           "why": "El artículo 93 regula la integración de tratados de derechos humanos al bloque de constitucionalidad; el artículo 85 identifica derechos de aplicación inmediata.",
@@ -10160,11 +10160,11 @@
           "case": "La entidad recibe una petición que corresponde a otra autoridad.",
           "prompt": "¿Qué debe hacer la entidad que recibe una petición fuera de su competencia?",
           "options": [
+            "Remitir la petición a la autoridad competente dentro del plazo aplicable y avisar al peticionario del traslado.",
             "Orientar al peticionario sobre la autoridad competente y solicitar que radique allí una nueva petición.",
-            "La petición puede presentarse ante cualquier autoridad; quien no sea competente debe trasladarla e informar al peticionario.",
-            "Contestar la solicitud con información propia y dar por atendida la competencia de la otra entidad."
+            "Responder los puntos que pueda atender y explicar al peticionario que la otra autoridad debe resolver lo restante."
           ],
-          "answer": 1,
+          "answer": 0,
           "why": "La petición puede presentarse ante cualquier autoridad; quien no sea competente debe trasladarla e informar al peticionario.",
           "difficulty": "media",
           "generatedBy": "editorial-curated-v3",
@@ -10209,11 +10209,11 @@
           "case": "Un usuario solicita información que tiene carácter reservado por ley.",
           "prompt": "¿Cómo debe motivarse la negativa cuando la información está protegida por reserva?",
           "options": [
-            "Negar todo el documento con una mención general a la reserva, dejando para el usuario la carga de controvertirla.",
-            "Entregar la información íntegra y explicar después que algunos datos estaban protegidos por reserva legal.",
-            "La reserva de información debe invocarse con motivación y norma; procede el mecanismo de insistencia ante el juez administrativo o el tribunal."
+            "Identificar la norma que ampara la reserva, motivar la negativa y explicar el mecanismo para controvertirla.",
+            "Entregar la información solicitada y advertir qué apartes no debieron divulgarse por estar reservados.",
+            "Negar el acceso con una referencia general a la reserva y habilitar la insistencia si el peticionario la solicita."
           ],
-          "answer": 2,
+          "answer": 0,
           "why": "La reserva de información debe invocarse con motivación y norma; procede el mecanismo de insistencia ante el juez administrativo o el tribunal.",
           "difficulty": "alta",
           "generatedBy": "editorial-curated-v3",
@@ -10421,15 +10421,15 @@
       ],
       "questions": [
         {
-          "case": "Un funcionario sin delegación firma una liquidación asignada a otra dependencia. Antes de notificarla, la entidad revisa la validez de la decisión.",
-          "prompt": "¿Qué debe revisarse antes de notificar una decisión firmada por un servidor sin delegación?",
+          "case": "Una liquidación está lista para notificarse. Al revisar el expediente, la oficina advierte que la asignación interna del asunto y la firma del acto podrían corresponder a dependencias distintas.",
+          "prompt": "¿Qué actuación permite resolver la duda antes de continuar el trámite?",
           "options": [
-            "Mantener la liquidación por la presunción de legalidad y corregir la falta de competencia durante la notificación.",
-            "La validez exige competencia, objeto, motivos, finalidad y forma; la decisión de fondo debe estar motivada.",
-            "Asumir que la firma de un servidor de la misma entidad suple una delegación no otorgada."
+            "Verificar la asignación y la delegación vigentes, y establecer si quien firmó podía decidir ese asunto.",
+            "Notificar el acto y revisar la distribución de funciones al resolver los recursos que presente el ciudadano.",
+            "Solicitar al área de origen que confirme la firma y continuar, sin contrastarla con las funciones asignadas."
           ],
-          "answer": 1,
-          "why": "Correcta: Elementos y requisitos de validez: competencia, objeto, motivos, finalidad y forma; la decisión de fondo debe estar motivada.",
+          "answer": 0,
+          "why": "La competencia se revisa antes de atribuir efectos a la decisión; una confirmación informal no reemplaza la asignación o delegación exigible.",
           "difficulty": "alta",
           "generatedBy": "editorial-curated-v3",
           "auditStatus": "REVISADA_EDITORIALMENTE_COBERTURA_UNICA",
@@ -10505,14 +10505,14 @@
           "bloomAlignment": "Taxonomía revisada de Bloom; énfasis en aplicar, analizar y evaluar."
         },
         {
-          "case": "Un acto queda en firme porque venció el plazo sin que se interpusieran recursos.",
-          "prompt": "¿En qué momento queda en firme el acto descrito?",
+          "case": "Un acto fue notificado y admitía recurso. El término venció sin que el interesado lo presentara, y la dependencia debe establecer desde cuándo puede ejecutarlo.",
+          "prompt": "¿Qué criterio permite fijar ese momento?",
           "options": [
-            "El acto queda firme cuando no proceden recursos, se resuelven o vence el término para interponerlos.",
-            "Contar la firmeza desde la fecha en que se expide el acto, aunque el término de recursos no haya vencido.",
-            "Entender que la falta de interposición mantiene abierto el acto hasta que un juez confirme su legalidad."
+            "Contar la firmeza desde la expedición, porque desde esa fecha la decisión ya existe jurídicamente.",
+            "Esperar a que venza el término para demandar el acto, aunque el plazo de recursos ya haya terminado.",
+            "Tomar como referencia el vencimiento del término de recurso, si hubo notificación válida y no se interpuso."
           ],
-          "answer": 0,
+          "answer": 2,
           "why": "La firmeza se determina por las reglas del artículo 87 del CPACA, no por la sola fecha de expedición.",
           "difficulty": "alta",
           "generatedBy": "editorial-curated-v3",
@@ -10547,15 +10547,15 @@
           "bloomAlignment": "Taxonomía revisada de Bloom; énfasis en aplicar, analizar y evaluar."
         },
         {
-          "case": "La entidad expide una decisión que afecta a un ciudadano y el área propone enviarle un correo informativo sin cumplir las formalidades de notificación.",
-          "prompt": "¿Qué debe verificar el servidor antes de comunicar formalmente la decisión?",
+          "case": "Una decisión particular afecta a un ciudadano. El equipo tiene su dirección electrónica y propone enviar allí un resumen, pero no ha comprobado si ese canal satisface las reglas de notificación aplicables.",
+          "prompt": "¿Qué debe comprobar el servidor antes de dar por notificada la decisión?",
           "options": [
-            "Enviar un correo de cortesía y asumir que la decisión quedó notificada por el solo conocimiento informal.",
-            "Notificación personal (art. 67), por aviso (art. 69) o electrónica (art. 56); comunicación no es lo mismo que notificación.",
-            "Usar el aviso como primera opción, aunque no se haya intentado la notificación personal exigible."
+            "Enviar el resumen al correo disponible y registrar el envío como notificación, aunque no incluya el acto completo.",
+            "Escoger el medio aplicable al caso, entregar el contenido exigido y dejar constancia de la diligencia.",
+            "Publicar un aviso de inmediato para todos los destinatarios, sin revisar si procede primero otro medio."
           ],
           "answer": 1,
-          "why": "Notificación personal (art. 67), por aviso (art. 69) o electrónica (art. 56); comunicación no es lo mismo que notificación.",
+          "why": "El medio debe corresponder al caso y permitir conocer la decisión y los recursos; un mensaje informativo no acredita por sí solo la notificación.",
           "difficulty": "media",
           "generatedBy": "editorial-curated-v3",
           "auditStatus": "REVISADA_EDITORIALMENTE_COBERTURA_UNICA",
@@ -10786,9 +10786,9 @@
           "case": "Una mercancía se entrega a bordo del buque designado por el comprador en el puerto de embarque.",
           "prompt": "¿Cómo se distribuyen entrega, riesgo y flete entre FOB, CFR y CIF?",
           "options": [
-            "FOB entrega y transfiere el riesgo a bordo; CFR suma flete y CIF suma flete y seguro, con riesgo transferido en embarque.",
-            "Trasladar el riesgo en el puerto de destino porque el vendedor paga el flete en CFR y CIF.",
-            "Exigir que el vendedor contrate el transporte en FOB, aunque ese término asigna esa gestión al comprador."
+            "En FOB el riesgo pasa a bordo; en CFR y CIF el vendedor paga flete y, en CIF, también seguro hasta destino.",
+            "En CFR y CIF el riesgo pasa en destino porque el vendedor contrata el transporte principal para esos términos.",
+            "En FOB el vendedor contrata el transporte marítimo hasta destino y asume el riesgo hasta la descarga."
           ],
           "answer": 0,
           "why": "En estos términos, flete y seguro hasta destino no cambian el punto de transferencia del riesgo.",
@@ -10945,9 +10945,9 @@
           "case": "Una clasificación arancelaria errada puede modificar el gravamen aplicable, los controles requeridos y las restricciones de importación.",
           "prompt": "¿Qué efectos puede producir la clasificación de una mercancía?",
           "options": [
-            "Asignar ocho dígitos al nivel nacional y ampliar a diez en la nomenclatura común de la CAN.",
-            "La clasificación incide en el arancel, los controles, las restricciones y la declaración; un error puede generar sanciones.",
-            "Considerar que la OMA define los diez dígitos usados en Colombia y que la CAN no amplía el SA."
+            "Determinar la subpartida aplicable, que puede modificar gravámenes, requisitos de control y restricciones.",
+            "Usar la clasificación para identificar gravamen, controles y requisitos declarativos que corresponden al producto.",
+            "Aplicar la subpartida internacional sin revisar los desdoblamientos nacionales ni las medidas asociadas."
           ],
           "answer": 1,
           "why": "La clasificación incide en el arancel, los controles, las restricciones y la declaración; un error puede generar sanciones.",
@@ -11202,9 +11202,9 @@
           "case": "Una empresa opera en un área delimitada con tratamiento aduanero y tributario especial.",
           "prompt": "¿Qué tratamiento caracteriza a una zona franca y cómo se distingue del tránsito aduanero?",
           "options": [
-            "Asimilar la zona franca a mercancía nacionalizada y permitir circulación sin el trámite correspondiente.",
-            "La zona franca es un área delimitada con tratamiento especial; el tránsito traslada mercancías bajo control entre aduanas.",
-            "Tratar el tránsito entre aduanas como ingreso definitivo al territorio con levante inmediato."
+            "Aplicar el tratamiento de zona franca a un área habilitada y sujetar los traslados entre aduanas al régimen de tránsito.",
+            "Distinguir el tratamiento especial de la zona franca del traslado controlado entre una aduana y otra.",
+            "Tratar la zona franca como régimen de tránsito y considerar que el levante permite el ingreso definitivo."
           ],
           "answer": 1,
           "why": "Ambas figuras tienen regímenes distintos: ubicación bajo tratamiento especial frente al traslado controlado entre aduanas.",
