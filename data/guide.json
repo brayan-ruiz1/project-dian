@@ -3272,7 +3272,7 @@
           "options": [
             "Consultar la regulación de importaciones para definir canalización de créditos e inversiones internacionales.",
             "Usar la lista general de operaciones obligatorias sin cotejar excepciones o condiciones de la operación concreta.",
-            "Consultar el artículo 41 de la Resolución Externa 1 de 2018 y verificar sus excepciones vigentes."
+            "Verificar si la operación requiere canalización y comprobar las condiciones y excepciones aplicables."
           ],
           "answer": 2,
           "why": "La fuente cambiaria enumera operaciones obligatorias, pero cada caso debe cotejarse con sus excepciones.",
@@ -8834,15 +8834,15 @@
       ],
       "questions": [
         {
-          "case": "Una entidad organiza la gestión en talento humano, planeación, servicio, evaluación, información y control interno.",
-          "prompt": "¿Qué marco integra esas dimensiones de gestión?",
+          "case": "En la revisión anual, cada dependencia reporta sus metas por separado. Los compromisos de servicio no se conectan con la planeación ni con los responsables de información y control, y los hallazgos de seguimiento no generan ajustes.",
+          "prompt": "¿Qué decisión directiva ayudaría a integrar la gestión y orientar la mejora?",
           "options": [
-            "Usar MIPG como un modelo de auditoría financiera, sin integrar planeación, servicio ni gestión de información.",
-            "Concentrar la gestión en indicadores y reportes de control, dejando talento humano y evaluación fuera del modelo.",
-            "MIPG integra talento humano, planeación, gestión, evaluación, información, conocimiento y control interno."
+            "Reunir los indicadores en un tablero común y mantener en cada dependencia la planeación y el seguimiento de sus metas.",
+            "Vincular objetivos, responsables, servicio, información y control en un ciclo común de seguimiento y ajuste.",
+            "Encargar a Planeación la consolidación anual de reportes y dejar que cada área defina por separado sus prioridades."
           ],
-          "answer": 2,
-          "why": "El modelo articula dimensiones de gestión y control; no se reduce a una sola dependencia o proceso.",
+          "answer": 1,
+          "why": "La gestión integrada relaciona planeación, ejecución, evaluación y mejora entre dependencias, en vez de limitarse a reunir reportes.",
           "difficulty": "media",
           "generatedBy": "manual-audit-2026-10",
           "auditStatus": "RECONSTRUIDA",
@@ -8883,15 +8883,15 @@
           "bloomAlignment": "Taxonomía revisada de Bloom; énfasis en aplicar, analizar y evaluar."
         },
         {
-          "case": "Un servidor afirma que el Código de Integridad reemplaza el procedimiento disciplinario cuando ocurre una conducta irregular.",
-          "prompt": "¿Qué función cumplen los códigos de integridad?",
+          "case": "En una reunión de equipo se detecta una conducta que podría apartarse de los valores institucionales. La jefatura debe orientar al grupo y decidir si corresponde iniciar otra actuación.",
+          "prompt": "¿Cómo debe usarse el Código de Integridad en este caso?",
           "options": [
-            "Los códigos de integridad orientan conducta, pero no sustituyen normas disciplinarias ni procedimientos.",
-            "Aplicar los valores del Código para orientar el análisis, pero tratarlo como sustituto de la investigación disciplinaria.",
-            "Reservar el Código de Integridad para inducciones y no considerarlo en las decisiones cotidianas del empleo."
+            "Usar sus valores para conversar sobre la conducta y, si hay indicios de falta, activar el trámite que corresponda.",
+            "Aplicar el valor posiblemente afectado como criterio suficiente para definir la responsabilidad del servidor.",
+            "Registrar la situación en la evaluación de desempeño y acudir a otro procedimiento solo si se repite."
           ],
           "answer": 0,
-          "why": "Los códigos de integridad orientan conducta, pero no sustituyen normas disciplinarias ni procedimientos.",
+          "why": "El Código orienta comportamientos esperados; no determina por sí solo responsabilidad ni reemplaza los procedimientos aplicables.",
           "difficulty": "media",
           "generatedBy": "manual-audit-2026-10",
           "auditStatus": "RECONSTRUIDA",
@@ -8932,15 +8932,15 @@
           "bloomAlignment": "Taxonomía revisada de Bloom; énfasis en aplicar, analizar y evaluar."
         },
         {
-          "case": "Una dependencia pide a la Oficina de Control Interno que ejecute su control operativo y luego certifique de manera independiente la eficacia.",
-          "prompt": "¿Qué distribución de responsabilidades corresponde?",
+          "case": "Una dependencia solicita a Control Interno que diseñe y opere el control de sus expedientes, y después emita una evaluación independiente sobre su eficacia.",
+          "prompt": "¿Cómo deben distribuirse las tareas para conservar la responsabilidad de gestión y la evaluación independiente?",
           "options": [
-            "Asignar a Control Interno el diseño y operación de los controles de cada proceso antes de que evalúe su eficacia.",
-            "El control interno es responsabilidad de todos en su rol; la oficina de control interno evalúa de forma independiente.",
-            "Hacer que la oficina certifique controles ejecutados por ella misma para asegurar uniformidad institucional."
+            "Los líderes del proceso definen y operan sus controles; Control Interno revisa su diseño y funcionamiento con independencia.",
+            "Control Interno diseña el control, mientras el líder del proceso conserva la operación y documenta su ejecución.",
+            "Los responsables de proceso proponen controles y Control Interno puede operarlos temporalmente antes de evaluarlos."
           ],
-          "answer": 1,
-          "why": "El control interno es responsabilidad de todos en su rol; la oficina de control interno evalúa de forma independiente.",
+          "answer": 0,
+          "why": "Los líderes conservan la gestión de sus controles; la Oficina de Control Interno evalúa sin asumir su operación.",
           "difficulty": "media",
           "generatedBy": "manual-audit-2026-10",
           "auditStatus": "RECONSTRUIDA",
@@ -8981,15 +8981,15 @@
           "bloomAlignment": "Taxonomía revisada de Bloom; énfasis en aplicar, analizar y evaluar."
         },
         {
-          "case": "Un proyecto institucional tiene eventos de riesgo que podrían impedir sus metas y no cuenta con controles ni responsables.",
-          "prompt": "¿Qué debe incluir la gestión del riesgo?",
+          "case": "En el seguimiento de un proyecto aparecen demoras en una actividad crítica y dependencia de un proveedor único. El equipo aún no ha definido responsables ni medidas para esos eventos.",
+          "prompt": "¿Qué debería hacer el responsable del proyecto para gestionar estos riesgos?",
           "options": [
-            "Registrar los riesgos en el mapa institucional y dar el seguimiento por cumplido sin asignar responsables de control.",
-            "Tratar los eventos como riesgos residuales aceptados desde el inicio del proyecto y no revisarlos por cambios.",
-            "La gestión del riesgo identifica eventos que pueden impedir objetivos y establece controles, responsables y seguimiento."
+            "Registrar ambos eventos y revisar su evolución al cierre, asignando responsables si afectan el resultado esperado.",
+            "Clasificarlos según probabilidad e impacto, asignar responsables, definir respuestas y revisar periódicamente su eficacia.",
+            "Pedir al proveedor un plan de contingencia y mantener la programación hasta que se materialice alguna demora."
           ],
-          "answer": 2,
-          "why": "La gestión del riesgo identifica eventos que pueden impedir objetivos y establece controles, responsables y seguimiento.",
+          "answer": 1,
+          "why": "La respuesta debe anticipar probabilidad e impacto, asignar responsables y dar seguimiento a las medidas antes de que el riesgo se materialice.",
           "difficulty": "media",
           "generatedBy": "manual-audit-2026-10",
           "auditStatus": "RECONSTRUIDA",
@@ -9668,9 +9668,9 @@
           "case": "Una decisión administrativa divulga datos personales sin justificación y además impide al afectado responder antes de imponer una consecuencia.",
           "prompt": "¿Qué derechos constitucionales pueden estar comprometidos?",
           "options": [
-            "Arts. 13 y 15: revisar igualdad y tratamiento de datos; la defensa se garantiza después de notificar la medida.",
-            "Arts. 15 y 29: proteger los datos personales y garantizar defensa y contradicción antes de imponer la consecuencia.",
-            "Arts. 15 y 23: proteger el hábeas data y el derecho de petición; el debido proceso se surte mediante el recurso posterior."
+            "Los datos están protegidos, pero la persona puede controvertir la medida después de que se notifique.",
+            "La divulgación puede afectar la intimidad y los datos personales, y la falta de defensa previa compromete el debido proceso.",
+            "El reclamo se atiende como una petición y la entidad puede divulgar datos si considera institucional su finalidad."
           ],
           "answer": 1,
           "why": "La divulgación compromete intimidad y hábeas data (art. 15); imponer una consecuencia sin oportunidad previa de defensa afecta el debido proceso (art. 29).",
